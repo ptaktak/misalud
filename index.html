@@ -2,211 +2,113 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="MiSalud">
-<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MiSalud</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --blue:#185FA5;--blue-l:#E6F1FB;
-  --green:#3B6D11;--green-l:#EAF3DE;
-  --red:#A32D2D;--red-l:#FCEBEB;
-  --amber:#854F0B;--amber-l:#FAEEDA;
-  --purple:#3C3489;--purple-l:#EEEDFE;
-  --bg:#f4f4f2;--bg2:#e8e8e5;
-  --txt:#1a1a18;--txt2:#5a5a56;--txt3:#9a9a94;
-  --bdr:rgba(0,0,0,0.1);--wh:#fff;
-  --r:12px;--rs:8px;
-}
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--txt);font-size:15px;line-height:1.5;max-width:430px;margin:0 auto;-webkit-tap-highlight-color:transparent}
-/* PAGES */
-.page{display:none;min-height:100vh}
-.page.on{display:block}
-/* USER PAGE */
-#p-user{background:var(--wh);padding:40px 24px;text-align:center}
-.logo{width:64px;height:64px;background:var(--blue-l);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
-.logo svg{width:32px;height:32px;stroke:var(--blue);fill:none;stroke-width:1.8}
-h1{font-size:22px;font-weight:600;margin-bottom:6px}
-.sub{font-size:14px;color:var(--txt2);margin-bottom:36px}
-.ubtn{display:flex;align-items:center;gap:14px;width:100%;padding:16px 20px;background:var(--wh);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;cursor:pointer;text-align:left;-webkit-appearance:none;appearance:none}
-.ubtn:active{background:var(--bg)}
-.av{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;flex-shrink:0}
-.av-b{background:var(--blue-l);color:var(--blue)}
-.av-p{background:var(--purple-l);color:var(--purple)}
-.uname{font-size:16px;font-weight:500;text-align:left}
-.usub{font-size:12px;color:var(--txt3);margin-top:2px;text-align:left}
-.arr{margin-left:auto;font-size:22px;color:var(--txt3)}
-/* APP PAGE */
-#p-app{display:none;flex-direction:column;min-height:100vh}
-#p-app.on{display:flex}
-.topbar{background:var(--wh);border-bottom:1px solid var(--bdr);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
-.tb-l .tb-title{font-size:16px;font-weight:600}
-.tb-l .tb-sub{font-size:12px;color:var(--txt3)}
-.tb-user{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:20px;background:var(--bg);border:none;font-size:13px;font-weight:500;color:var(--txt2);cursor:pointer;-webkit-appearance:none}
-.tb-user:active{background:var(--bg2)}
-.mav{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600}
-.scr{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px}
-.bnav{background:var(--wh);border-top:1px solid var(--bdr);display:flex;padding-bottom:env(safe-area-inset-bottom)}
-.ni{flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:var(--txt3);border:none;background:none;cursor:pointer;-webkit-appearance:none}
-.ni.on{color:var(--blue)}
-.ni svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
-/* CARDS */
-.card{background:var(--wh);border-radius:var(--r);margin:12px 12px 0;border:1px solid var(--bdr)}
-.chd{padding:11px 14px 9px;border-bottom:1px solid var(--bdr);font-size:11px;font-weight:600;color:var(--txt2);text-transform:uppercase;letter-spacing:.06em}
-.cbd{padding:14px}
-.fr{margin-bottom:12px}
-.fr:last-child{margin-bottom:0}
-.fl{font-size:12px;font-weight:500;color:var(--txt2);margin-bottom:6px;display:block}
-.iw{display:flex;gap:8px;align-items:center}
-.iw input{flex:1;height:44px;padding:0 12px;border:1px solid var(--bdr);border-radius:var(--rs);font-size:16px;color:var(--txt);background:var(--bg);outline:none;-webkit-appearance:none;appearance:none;min-width:0}
-.iw input:focus{border-color:var(--blue);background:var(--wh)}
-.iw input::placeholder{color:var(--txt3);font-size:14px}
-.ul{font-size:12px;color:var(--txt3);width:44px;text-align:center;flex-shrink:0}
-.tins{display:flex;gap:6px;align-items:center;flex:1;min-width:0}
-.tins input{flex:1;min-width:0}
-.tsep{font-size:18px;color:var(--txt3)}
-.seg{display:flex;gap:4px;background:var(--bg);padding:3px;border-radius:var(--rs)}
-.sb{flex:1;padding:7px 2px;border:none;border-radius:6px;font-size:11px;font-weight:500;color:var(--txt2);background:transparent;cursor:pointer;-webkit-appearance:none}
-.sb.on{background:var(--wh);color:var(--txt);box-shadow:0 1px 3px rgba(0,0,0,.08)}
-textarea{width:100%;padding:10px 12px;border:1px solid var(--bdr);border-radius:var(--rs);font-size:14px;color:var(--txt);background:var(--bg);resize:none;font-family:inherit;outline:none;-webkit-appearance:none;appearance:none}
-textarea:focus{border-color:var(--blue);background:var(--wh)}
-textarea::placeholder{color:var(--txt3)}
-.bsave{width:100%;height:46px;margin-top:4px;background:var(--blue);color:#fff;border:none;border-radius:var(--rs);font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;-webkit-appearance:none;appearance:none}
-.bsave svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.5}
-/* STATS */
-.srow{display:flex;gap:8px;padding:12px 12px 0}
-.sc{flex:1;background:var(--wh);border-radius:var(--r);padding:12px;border:1px solid var(--bdr);text-align:center}
-.sv{font-size:20px;font-weight:600;line-height:1.2}
-.sl{font-size:11px;color:var(--txt3);margin-top:2px}
-.su{font-size:11px;font-weight:400;color:var(--txt3)}
-/* HIST */
-.hi{display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid var(--bdr);gap:10px}
-.hi:last-child{border-bottom:none}
-.hdate{flex-shrink:0;text-align:center;min-width:42px}
-.hd{font-size:11px;font-weight:600;color:var(--txt2)}
-.ht{font-size:10px;color:var(--txt3);margin-top:1px}
-.hb{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;flex-shrink:0}
-.bok{background:var(--green-l);color:var(--green)}
-.bhi{background:var(--red-l);color:var(--red)}
-.blo{background:var(--amber-l);color:var(--amber)}
-.bbp{background:var(--purple-l);color:var(--purple)}
-.hval{margin-left:auto;text-align:right}
-.hvm{font-size:15px;font-weight:600}
-.hvu{font-size:11px;color:var(--txt3)}
-.hcnt{flex:1;min-width:0}
-.hmom{font-size:11px;color:var(--txt2)}
-.delbtn{background:none;border:none;cursor:pointer;color:var(--txt3);padding:4px;flex-shrink:0}
-.delbtn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
-/* FILTER */
-.fprow{display:flex;gap:6px;padding:10px 12px 0;overflow-x:auto}
-.fprow::-webkit-scrollbar{display:none}
-.fp{padding:6px 12px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--bdr);background:var(--wh);color:var(--txt2);cursor:pointer;white-space:nowrap;-webkit-appearance:none;appearance:none}
-.fp.on{background:var(--blue);color:#fff;border-color:var(--blue)}
-/* EMPTY */
-.empty{text-align:center;padding:40px 20px;color:var(--txt3);font-size:14px}
-.empty svg{width:40px;height:40px;margin:0 auto 12px;display:block;opacity:.4;stroke:currentColor;fill:none;stroke-width:1.5}
-/* EXPORT */
-.er{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--bdr);gap:10px}
-.er:last-child{border-bottom:none}
-.bo{padding:8px 14px;border:1px solid var(--bdr);border-radius:var(--rs);background:var(--wh);font-size:13px;font-weight:500;color:var(--txt);cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;-webkit-appearance:none;flex-shrink:0}
-.bo svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
-/* TOAST */
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1a1a18;color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;font-weight:500;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap;z-index:999}
-.toast.on{opacity:1}
-/* MODAL */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:flex-end;justify-content:center}
-.modal-bg.on{display:flex}
-.modal{background:var(--wh);border-radius:20px 20px 0 0;padding:24px;width:100%;max-width:430px}
-/* DARK */
-@media(prefers-color-scheme:dark){
-  :root{--bg:#1c1c1e;--bg2:#2c2c2e;--wh:#1c1c1e;--txt:#f0f0ec;--txt2:#aeaea8;--txt3:#6e6e68;--bdr:rgba(255,255,255,0.1);--blue-l:#0c2a45;--green-l:#152808;--red-l:#2a0f0f;--amber-l:#2a1800;--purple-l:#1a1840}
-  body{background:#000}
-  .card,.sc,.modal{background:#2c2c2e}
-  .topbar,.bnav,#p-user{background:#1c1c1e}
-  .iw input,textarea{background:#2c2c2e;border-color:rgba(255,255,255,.15)}
-  .iw input:focus,textarea:focus{background:#2c2c2e;border-color:#4a9fd4}
-  .seg{background:#2c2c2e}
-  .sb.on{background:#3a3a3c}
-  .ubtn,.bo,.fp{background:#2c2c2e}
-  .tb-user{background:#2c2c2e}
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, sans-serif; background: #f4f4f2; }
 </style>
 </head>
 <body>
 
-<!-- PANTALLA USUARIO -->
-<div id="p-user" class="page on">
-  <div class="logo"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-  <h1>MiSalud</h1>
-  <p class="sub">Selecciona tu perfil</p>
-  <button class="ubtn" id="btn-u1" onclick="selUser('u1')">
-    <div class="av av-b" id="av1">L</div>
-    <div><div class="uname" id="nm1">Luis</div><div class="usub" id="sub1">Toca para continuar</div></div>
-    <span class="arr">›</span>
-  </button>
-  <button class="ubtn" id="btn-u2" onclick="selUser('u2')">
-    <div class="av av-p" id="av2">M</div>
-    <div><div class="uname" id="nm2">Mi mujer</div><div class="usub" id="sub2">Toca para continuar</div></div>
-    <span class="arr">›</span>
-  </button>
-  <button onclick="abrirConf()" style="background:none;border:none;color:var(--txt3);font-size:13px;cursor:pointer;padding:12px;margin-top:8px">⚙️ Cambiar nombres</button>
-</div>
-
-<!-- MODAL CONFIGURACION -->
-<div class="modal-bg" id="modal-conf">
-  <div class="modal">
-    <div style="font-size:16px;font-weight:600;margin-bottom:16px">Nombres de usuario</div>
-    <div class="fr"><label class="fl">Usuario 1</label><div class="iw"><input type="text" id="inp-nm1" placeholder="Nombre..." maxlength="20" style="font-size:15px"></div></div>
-    <div class="fr"><label class="fl">Usuario 2</label><div class="iw"><input type="text" id="inp-nm2" placeholder="Nombre..." maxlength="20" style="font-size:15px"></div></div>
-    <button class="bsave" onclick="guardarConf()" style="margin-top:8px">Guardar</button>
-    <button onclick="cerrarConf()" style="width:100%;margin-top:10px;padding:12px;border:none;background:none;color:var(--txt2);font-size:14px;cursor:pointer">Cancelar</button>
+<div id="pUsuario" style="display:block; background:white; min-height:100vh; padding:40px 24px; text-align:center;">
+  <div style="width:64px;height:64px;background:#E6F1FB;border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
   </div>
-</div>
+  <div style="font-size:24px;font-weight:700;margin-bottom:8px;">MiSalud</div>
+  <div style="font-size:15px;color:#666;margin-bottom:40px;">Selecciona tu perfil</div>
 
-<!-- APP -->
-<div id="p-app" class="page">
-  <div class="topbar">
-    <div class="tb-l">
-      <div class="tb-title">&#9829; MiSalud</div>
-      <div class="tb-sub" id="tb-fecha"></div>
+  <button id="btnU1"
+    style="display:flex;align-items:center;gap:14px;width:100%;padding:18px 20px;background:white;border:1px solid #ddd;border-radius:12px;margin-bottom:12px;font-size:16px;cursor:pointer;text-align:left;">
+    <div id="avU1" style="width:44px;height:44px;border-radius:50%;background:#E6F1FB;color:#185FA5;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;">L</div>
+    <div>
+      <div id="nmU1" style="font-size:16px;font-weight:600;">Luis</div>
+      <div id="subU1" style="font-size:12px;color:#999;margin-top:2px;">Toca para continuar</div>
     </div>
-    <button class="tb-user" onclick="volverUsuarios()">
-      <div class="mav" id="tb-av" style="background:var(--blue-l);color:var(--blue)">L</div>
-      <span id="tb-nm">Luis</span>
+    <span style="margin-left:auto;font-size:24px;color:#999;">›</span>
+  </button>
+
+  <button id="btnU2"
+    style="display:flex;align-items:center;gap:14px;width:100%;padding:18px 20px;background:white;border:1px solid #ddd;border-radius:12px;margin-bottom:12px;font-size:16px;cursor:pointer;text-align:left;">
+    <div id="avU2" style="width:44px;height:44px;border-radius:50%;background:#EEEDFE;color:#3C3489;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;">M</div>
+    <div>
+      <div id="nmU2" style="font-size:16px;font-weight:600;">Mi mujer</div>
+      <div id="subU2" style="font-size:12px;color:#999;margin-top:2px;">Toca para continuar</div>
+    </div>
+    <span style="margin-left:auto;font-size:24px;color:#999;">›</span>
+  </button>
+
+  <button id="btnConf" style="background:none;border:none;color:#999;font-size:13px;cursor:pointer;padding:12px;margin-top:8px;">⚙️ Cambiar nombres</button>
+</div>
+
+<!-- MODAL NOMBRES -->
+<div id="modalConf" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:100;align-items:flex-end;justify-content:center;">
+  <div style="background:white;border-radius:20px 20px 0 0;padding:24px;width:100%;max-width:430px;">
+    <div style="font-size:16px;font-weight:600;margin-bottom:16px;">Cambiar nombres</div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:500;color:#666;display:block;margin-bottom:6px;">Usuario 1</label>
+      <input id="inpNm1" type="text" maxlength="20" style="width:100%;height:44px;padding:0 12px;border:1px solid #ddd;border-radius:8px;font-size:15px;">
+    </div>
+    <div style="margin-bottom:16px;">
+      <label style="font-size:12px;font-weight:500;color:#666;display:block;margin-bottom:6px;">Usuario 2</label>
+      <input id="inpNm2" type="text" maxlength="20" style="width:100%;height:44px;padding:0 12px;border:1px solid #ddd;border-radius:8px;font-size:15px;">
+    </div>
+    <button id="btnGuardarConf" style="width:100%;height:46px;background:#185FA5;color:white;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;">Guardar</button>
+    <button id="btnCerrarConf" style="width:100%;margin-top:10px;padding:12px;border:none;background:none;color:#666;font-size:14px;cursor:pointer;">Cancelar</button>
+  </div>
+</div>
+
+<!-- APP PRINCIPAL -->
+<div id="pApp" style="display:none; flex-direction:column; min-height:100vh;">
+
+  <!-- TOPBAR -->
+  <div style="background:white;border-bottom:1px solid #eee;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;">
+    <div>
+      <div style="font-size:16px;font-weight:600;">❤ MiSalud</div>
+      <div id="tbFecha" style="font-size:12px;color:#999;"></div>
+    </div>
+    <button id="btnCambiarU" style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:20px;background:#f4f4f2;border:none;font-size:13px;font-weight:500;cursor:pointer;">
+      <div id="tbAv" style="width:24px;height:24px;border-radius:50%;background:#E6F1FB;color:#185FA5;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">L</div>
+      <span id="tbNm">Luis</span>
     </button>
   </div>
-  <div class="scr" id="contenido"></div>
-  <div class="bnav">
-    <button class="ni on" id="nt-ini" onclick="irTab('ini')">
-      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Inicio
+
+  <!-- CONTENIDO -->
+  <div id="contenido" style="flex:1;overflow-y:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch;"></div>
+
+  <!-- NAV -->
+  <div style="background:white;border-top:1px solid #eee;display:flex;position:sticky;bottom:0;">
+    <button id="navIni" onclick="irTab('ini')" style="flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#185FA5;border:none;background:none;cursor:pointer;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio
     </button>
-    <button class="ni" id="nt-his" onclick="irTab('his')">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Historial
+    <button id="navHis" onclick="irTab('his')" style="flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#999;border:none;background:none;cursor:pointer;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Historial
     </button>
-    <button class="ni" id="nt-grf" onclick="irTab('grf')">
-      <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      Gráficas
+    <button id="navGrf" onclick="irTab('grf')" style="flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#999;border:none;background:none;cursor:pointer;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Gráficas
     </button>
-    <button class="ni" id="nt-exp" onclick="irTab('exp')">
-      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Exportar
+    <button id="navExp" onclick="irTab('exp')" style="flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#999;border:none;background:none;cursor:pointer;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Exportar
     </button>
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div id="toast" style="position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#111;color:white;padding:10px 18px;border-radius:20px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap;z-index:999;"></div>
 
 <script>
-// DATOS
-var SK = 'ms4';
+var SK = 'ms5';
 var MEM = null;
+var CU = null;
+var CT = 'ini';
+var CF = 'tod';
+var CM = 'Ayuno';
 
+// STORAGE
 function leer() {
-  try { var r = localStorage.getItem(SK); if (r) { var p = JSON.parse(r); MEM = p; return p; } } catch(e) {}
+  try {
+    var r = localStorage.getItem(SK);
+    if (r) { var p = JSON.parse(r); MEM = p; return p; }
+  } catch(e) {}
   if (MEM) return MEM;
   MEM = { n: { u1: 'Luis', u2: 'Mi mujer' }, r: [] };
   return MEM;
@@ -216,65 +118,64 @@ function guardar(d) {
   try { localStorage.setItem(SK, JSON.stringify(d)); } catch(e) {}
 }
 
-// ESTADO
-var CU = null;
-var CT = 'ini';
-var CF = 'tod';
-var CM = 'Ayuno';
+// MOSTRAR/OCULTAR
+function mostrar(id) { document.getElementById(id).style.display = 'flex'; }
+function ocultar(id) { document.getElementById(id).style.display = 'none'; }
 
-// USUARIOS
-function selUser(uid) {
+// INIT USUARIOS
+function initUsuarios() {
+  var d = leer();
+  var n1 = d.n.u1 || 'Luis';
+  var n2 = d.n.u2 || 'Mi mujer';
+  document.getElementById('nmU1').textContent = n1;
+  document.getElementById('nmU2').textContent = n2;
+  document.getElementById('avU1').textContent = n1[0].toUpperCase();
+  document.getElementById('avU2').textContent = n2[0].toUpperCase();
+  var c1=0, c2=0;
+  for (var i=0; i<d.r.length; i++) {
+    if (d.r[i].u==='u1') c1++;
+    if (d.r[i].u==='u2') c2++;
+  }
+  document.getElementById('subU1').textContent = c1>0 ? c1+' registros' : 'Toca para continuar';
+  document.getElementById('subU2').textContent = c2>0 ? c2+' registros' : 'Toca para continuar';
+}
+
+function entrar(uid) {
   CU = uid;
   var d = leer();
-  var nm = d.n[uid] || (uid === 'u1' ? 'Luis' : 'Mi mujer');
-  document.getElementById('tb-nm').textContent = nm;
-  var av = document.getElementById('tb-av');
-  av.textContent = nm[0].toUpperCase();
-  av.style.background = uid === 'u1' ? 'var(--blue-l)' : 'var(--purple-l)';
-  av.style.color = uid === 'u1' ? 'var(--blue)' : 'var(--purple)';
-  document.getElementById('tb-fecha').textContent = new Date().toLocaleDateString('es-ES', {weekday:'long',day:'numeric',month:'long'});
-  document.getElementById('p-user').className = 'page';
-  document.getElementById('p-app').className = 'page on';
+  var nm = d.n[uid] || (uid==='u1'?'Luis':'Mi mujer');
+  document.getElementById('tbNm').textContent = nm;
+  document.getElementById('tbAv').textContent = nm[0].toUpperCase();
+  document.getElementById('tbAv').style.background = uid==='u1' ? '#E6F1FB' : '#EEEDFE';
+  document.getElementById('tbAv').style.color = uid==='u1' ? '#185FA5' : '#3C3489';
+  var now = new Date();
+  document.getElementById('tbFecha').textContent = now.toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long'});
+  ocultar('pUsuario');
+  mostrar('pApp');
   irTab('ini');
 }
 
 function volverUsuarios() {
-  document.getElementById('p-app').className = 'page';
-  document.getElementById('p-user').className = 'page on';
-  refrUsuarios();
+  ocultar('pApp');
+  mostrar('pUsuario');
+  initUsuarios();
 }
 
-function refrUsuarios() {
-  var d = leer();
-  var n1 = d.n.u1 || 'Luis';
-  var n2 = d.n.u2 || 'Mi mujer';
-  document.getElementById('nm1').textContent = n1;
-  document.getElementById('nm2').textContent = n2;
-  document.getElementById('av1').textContent = n1[0].toUpperCase();
-  document.getElementById('av2').textContent = n2[0].toUpperCase();
-  var c1 = 0, c2 = 0;
-  for (var i = 0; i < d.r.length; i++) {
-    if (d.r[i].u === 'u1') c1++;
-    if (d.r[i].u === 'u2') c2++;
-  }
-  document.getElementById('sub1').textContent = c1 > 0 ? c1 + ' registros' : 'Toca para continuar';
-  document.getElementById('sub2').textContent = c2 > 0 ? c2 + ' registros' : 'Toca para continuar';
-}
-
+// CONFIGURACION
 function abrirConf() {
   var d = leer();
-  document.getElementById('inp-nm1').value = d.n.u1 || 'Luis';
-  document.getElementById('inp-nm2').value = d.n.u2 || 'Mi mujer';
-  document.getElementById('modal-conf').className = 'modal-bg on';
+  document.getElementById('inpNm1').value = d.n.u1||'Luis';
+  document.getElementById('inpNm2').value = d.n.u2||'Mi mujer';
+  document.getElementById('modalConf').style.display = 'flex';
 }
-function cerrarConf() { document.getElementById('modal-conf').className = 'modal-bg'; }
+function cerrarConf() { document.getElementById('modalConf').style.display = 'none'; }
 function guardarConf() {
   var d = leer();
-  d.n.u1 = document.getElementById('inp-nm1').value.trim() || 'Luis';
-  d.n.u2 = document.getElementById('inp-nm2').value.trim() || 'Mi mujer';
+  d.n.u1 = document.getElementById('inpNm1').value.trim()||'Luis';
+  d.n.u2 = document.getElementById('inpNm2').value.trim()||'Mi mujer';
   guardar(d);
   cerrarConf();
-  refrUsuarios();
+  initUsuarios();
   toast('Nombres actualizados');
 }
 
@@ -282,171 +183,222 @@ function guardarConf() {
 function irTab(t) {
   CT = t;
   var tabs = ['ini','his','grf','exp'];
-  for (var i = 0; i < tabs.length; i++) {
-    var el = document.getElementById('nt-' + tabs[i]);
-    if (el) el.className = 'ni' + (tabs[i] === t ? ' on' : '');
+  for (var i=0; i<tabs.length; i++) {
+    var btn = document.getElementById('nav'+tabs[i].charAt(0).toUpperCase()+tabs[i].slice(1));
+    if (btn) btn.style.color = tabs[i]===t ? '#185FA5' : '#999';
   }
   var c = document.getElementById('contenido');
-  if (t === 'ini') tInicio(c);
-  else if (t === 'his') tHistorial(c);
-  else if (t === 'grf') tGraficas(c);
-  else if (t === 'exp') tExportar(c);
+  if (t==='ini') tabInicio(c);
+  else if (t==='his') tabHistorial(c);
+  else if (t==='grf') tabGraficas(c);
+  else if (t==='exp') tabExportar(c);
   c.scrollTop = 0;
 }
 
-// TAB INICIO
-function tInicio(el) {
+// ── INICIO ────────────────────────────────────────────────────────────────
+function tabInicio(el) {
   var d = leer();
-  var gr = [], br = [];
-  for (var i = 0; i < d.r.length; i++) {
-    if (d.r[i].u === CU && d.r[i].t === 'g') gr.push(d.r[i]);
-    if (d.r[i].u === CU && d.r[i].t === 'b') br.push(d.r[i]);
+  var gr=[], br=[];
+  for (var i=0;i<d.r.length;i++) {
+    if (d.r[i].u===CU && d.r[i].t==='g') gr.push(d.r[i]);
+    if (d.r[i].u===CU && d.r[i].t==='b') br.push(d.r[i]);
   }
   var lg = gr.length ? gr[gr.length-1] : null;
   var lb = br.length ? br[br.length-1] : null;
-  var sg = lg ? '<div class="sv">'+lg.v+' <span class="su">mg/dL</span></div><div class="sl">'+fRel(lg.ts)+'</div>'
-              : '<div class="sv" style="font-size:16px;color:var(--txt3)">—</div><div class="sl">Sin datos</div>';
-  var sbp = lb ? '<div class="sv">'+lb.s+'/'+lb.di+'</div><div class="sl">'+fRel(lb.ts)+'</div>'
-               : '<div class="sv" style="font-size:16px;color:var(--txt3)">—</div><div class="sl">Sin datos</div>';
-  var moms = [['Ayuno','Ayuno'],['Antes comer','Antes'],['Después comer','Después'],['Noche','Noche']];
+
+  var moms = [['Ayuno','Ayuno'],['Antes comer','Antes'],['Despues comer','Despues'],['Noche','Noche']];
   var segs = '';
-  for (var m = 0; m < moms.length; m++) {
-    segs += '<button class="sb'+(CM===moms[m][0]?' on':'')+'" onclick="selMom(this)" data-m="'+moms[m][0]+'">'+moms[m][1]+'</button>';
+  for (var m=0;m<moms.length;m++) {
+    var act = CM===moms[m][0];
+    segs += '<button onclick="selMom(this)" data-m="'+moms[m][0]+'" style="flex:1;padding:7px 2px;border:none;border-radius:6px;font-size:11px;font-weight:500;cursor:pointer;'
+      +(act?'background:white;color:#1a1a18;box-shadow:0 1px 3px rgba(0,0,0,.1);':'background:transparent;color:#666;')
+      +'">'+moms[m][1]+'</button>';
   }
-  el.innerHTML = '<div class="srow">'
-    +'<div class="sc"><div class="sl" style="margin-bottom:4px">Glucosa</div>'+sg+'</div>'
-    +'<div class="sc"><div class="sl" style="margin-bottom:4px">Tensión</div>'+sbp+'</div>'
+
+  el.innerHTML =
+    // Stats
+    '<div style="display:flex;gap:8px;padding:12px 12px 0;">'
+    +'<div style="flex:1;background:white;border-radius:12px;padding:12px;border:1px solid #eee;text-align:center;">'
+    +'<div style="font-size:11px;color:#999;margin-bottom:4px;">Glucosa</div>'
+    +(lg ? '<div style="font-size:20px;font-weight:600;">'+lg.v+' <span style="font-size:11px;color:#999;">mg/dL</span></div><div style="font-size:11px;color:#999;">'+fRel(lg.ts)+'</div>'
+         : '<div style="font-size:16px;color:#ccc;">—</div><div style="font-size:11px;color:#ccc;">Sin datos</div>')
     +'</div>'
-    +'<div class="card"><div class="chd">Registrar glucosa</div><div class="cbd">'
-    +'<div class="fr"><label class="fl">Valor</label><div class="iw"><input type="number" id="ig" placeholder="ej. 98" min="20" max="600" inputmode="decimal"><div class="ul">mg/dL</div></div></div>'
-    +'<div class="fr"><label class="fl">Momento</label><div class="seg">'+segs+'</div></div>'
-    +'<div class="fr"><label class="fl">Nota (opcional)</label><textarea id="ign" rows="2" placeholder="Ej: después del desayuno..."></textarea></div>'
-    +'<button class="bsave" onclick="guardarG()"><svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>Guardar glucosa</button>'
+    +'<div style="flex:1;background:white;border-radius:12px;padding:12px;border:1px solid #eee;text-align:center;">'
+    +'<div style="font-size:11px;color:#999;margin-bottom:4px;">Tensión</div>'
+    +(lb ? '<div style="font-size:20px;font-weight:600;">'+lb.s+'/'+lb.di+'</div><div style="font-size:11px;color:#999;">'+fRel(lb.ts)+'</div>'
+         : '<div style="font-size:16px;color:#ccc;">—</div><div style="font-size:11px;color:#ccc;">Sin datos</div>')
     +'</div></div>'
-    +'<div class="card"><div class="chd">Registrar tensión <span style="font-size:10px;color:var(--txt3);font-weight:400;text-transform:none">(opcional)</span></div><div class="cbd">'
-    +'<div class="fr"><label class="fl">Sistólica / Diastólica</label><div class="iw"><div class="tins"><input type="number" id="is" placeholder="125" inputmode="decimal"><span class="tsep">/</span><input type="number" id="idi" placeholder="82" inputmode="decimal"></div><div class="ul">mmHg</div></div></div>'
-    +'<div class="fr"><label class="fl">Nota (opcional)</label><textarea id="ibn" rows="2" placeholder="Ej: en reposo..."></textarea></div>'
-    +'<button class="bsave" style="background:var(--purple)" onclick="guardarB()"><svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>Guardar tensión</button>'
+
+    // Glucosa
+    +'<div style="background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;">'
+    +'<div style="padding:11px 14px 9px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.06em;">Registrar glucosa</div>'
+    +'<div style="padding:14px;">'
+    +'<label style="font-size:12px;font-weight:500;color:#666;display:block;margin-bottom:6px;">Valor</label>'
+    +'<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">'
+    +'<input type="number" id="igv" inputmode="decimal" placeholder="ej. 98" style="flex:1;height:44px;padding:0 12px;border:1px solid #ddd;border-radius:8px;font-size:16px;background:#f4f4f2;">'
+    +'<span style="font-size:12px;color:#999;width:44px;text-align:center;">mg/dL</span></div>'
+    +'<label style="font-size:12px;font-weight:500;color:#666;display:block;margin-bottom:6px;">Momento</label>'
+    +'<div style="display:flex;gap:4px;background:#f4f4f2;padding:3px;border-radius:8px;margin-bottom:12px;">'+segs+'</div>'
+    +'<label style="font-size:12px;font-weight:500;color:#666;display:block;margin-bottom:6px;">Nota (opcional)</label>'
+    +'<textarea id="ign" rows="2" placeholder="Ej: despues del desayuno..." style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;background:#f4f4f2;font-family:inherit;resize:none;"></textarea>'
+    +'<button onclick="guardarG()" style="width:100%;height:46px;margin-top:12px;background:#185FA5;color:white;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;">Guardar glucosa</button>'
     +'</div></div>'
-    +'<div style="height:12px"></div>';
+
+    // Tension
+    +'<div style="background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;">'
+    +'<div style="padding:11px 14px 9px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.06em;">Registrar tensión <span style="font-size:10px;color:#ccc;font-weight:400;text-transform:none;">(opcional)</span></div>'
+    +'<div style="padding:14px;">'
+    +'<label style="font-size:12px;font-weight:500;color:#666;display:block;margin-bottom:6px;">Sistólica / Diastólica</label>'
+    +'<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">'
+    +'<input type="number" id="isv" inputmode="decimal" placeholder="125" style="flex:1;height:44px;padding:0 12px;border:1px solid #ddd;border-radius:8px;font-size:16px;background:#f4f4f2;min-width:0;">'
+    +'<span style="font-size:18px;color:#ccc;">/</span>'
+    +'<input type="number" id="idv" inputmode="decimal" placeholder="82" style="flex:1;height:44px;padding:0 12px;border:1px solid #ddd;border-radius:8px;font-size:16px;background:#f4f4f2;min-width:0;">'
+    +'<span style="font-size:12px;color:#999;width:44px;text-align:center;">mmHg</span></div>'
+    +'<label style="font-size:12px;font-weight:500;color:#666;display:block;margin-bottom:6px;">Nota (opcional)</label>'
+    +'<textarea id="ibn" rows="2" placeholder="Ej: en reposo..." style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;background:#f4f4f2;font-family:inherit;resize:none;"></textarea>'
+    +'<button onclick="guardarB()" style="width:100%;height:46px;margin-top:12px;background:#3C3489;color:white;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;">Guardar tensión</button>'
+    +'</div></div>'
+    +'<div style="height:12px;"></div>';
 }
 
 function selMom(btn) {
-  var btns = document.querySelectorAll('.sb');
-  for (var i = 0; i < btns.length; i++) btns[i].className = 'sb';
-  btn.className = 'sb on';
+  var btns = document.querySelectorAll('[data-m]');
+  for (var i=0;i<btns.length;i++) {
+    btns[i].style.background = 'transparent';
+    btns[i].style.color = '#666';
+    btns[i].style.boxShadow = 'none';
+  }
+  btn.style.background = 'white';
+  btn.style.color = '#1a1a18';
+  btn.style.boxShadow = '0 1px 3px rgba(0,0,0,.1)';
   CM = btn.getAttribute('data-m');
 }
 
 function guardarG() {
-  var v = parseFloat(document.getElementById('ig').value);
-  if (!v || v < 20 || v > 600) { toast('Valor entre 20 y 600'); return; }
+  var v = parseFloat(document.getElementById('igv').value);
+  if (!v||v<20||v>600) { toast('Valor entre 20 y 600'); return; }
   var n = document.getElementById('ign').value.trim();
   var d = leer();
   d.r.push({u:CU,t:'g',v:v,m:CM,n:n,ts:Date.now()});
   guardar(d);
-  document.getElementById('ig').value = '';
-  document.getElementById('ign').value = '';
+  document.getElementById('igv').value='';
+  document.getElementById('ign').value='';
   toast('Glucosa guardada ✓');
   irTab('ini');
 }
 
 function guardarB() {
-  var s = parseFloat(document.getElementById('is').value);
-  var di = parseFloat(document.getElementById('idi').value);
-  if (!s || !di) { toast('Introduce sistólica y diastólica'); return; }
+  var s = parseFloat(document.getElementById('isv').value);
+  var di = parseFloat(document.getElementById('idv').value);
+  if (!s||!di) { toast('Introduce sistólica y diastólica'); return; }
   var n = document.getElementById('ibn').value.trim();
   var d = leer();
   d.r.push({u:CU,t:'b',s:s,di:di,n:n,ts:Date.now()});
   guardar(d);
-  document.getElementById('is').value = '';
-  document.getElementById('idi').value = '';
-  document.getElementById('ibn').value = '';
+  document.getElementById('isv').value='';
+  document.getElementById('idv').value='';
+  document.getElementById('ibn').value='';
   toast('Tensión guardada ✓');
   irTab('ini');
 }
 
-// TAB HISTORIAL
-function tHistorial(el) {
+// ── HISTORIAL ─────────────────────────────────────────────────────────────
+function tabHistorial(el) {
   var d = leer();
-  var recs = [];
-  for (var i = d.r.length - 1; i >= 0; i--) {
-    var r = d.r[i];
-    if (r.u !== CU) continue;
-    if (CF === 'glu' && r.t !== 'g') continue;
-    if (CF === 'ten' && r.t !== 'b') continue;
+  var recs=[];
+  for (var i=d.r.length-1;i>=0;i--) {
+    var r=d.r[i];
+    if (r.u!==CU) continue;
+    if (CF==='glu'&&r.t!=='g') continue;
+    if (CF==='ten'&&r.t!=='b') continue;
     recs.push({r:r,i:i});
   }
-  var items = '';
-  for (var k = 0; k < recs.length; k++) {
-    var r = recs[k].r, ri = recs[k].i;
-    var db = '<button class="delbtn" onclick="borrar('+ri+')"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg></button>';
-    if (r.t === 'g') {
-      var bc = r.v < 70 ? 'blo' : r.v > 130 ? 'bhi' : 'bok';
-      var bt = r.v < 70 ? 'Baja' : r.v > 130 ? 'Alta' : 'Normal';
-      items += '<div class="hi"><div class="hdate"><div class="hd">'+fDay(r.ts)+'</div><div class="ht">'+fTime(r.ts)+'</div></div>'
-        +'<div class="hcnt"><span class="hb '+bc+'">'+bt+'</span><div class="hmom" style="margin-top:3px">'+r.m+(r.n?' · <em style="color:var(--txt3)">'+esc(r.n)+'</em>':'')+'</div></div>'
-        +'<div class="hval"><div class="hvm">'+r.v+'</div><div class="hvu">mg/dL</div></div>'+db+'</div>';
+  var items='';
+  for (var k=0;k<recs.length;k++) {
+    var r=recs[k].r, ri=recs[k].i;
+    if (r.t==='g') {
+      var col = r.v<70?'#854F0B':r.v>130?'#A32D2D':'#3B6D11';
+      var bg  = r.v<70?'#FAEEDA':r.v>130?'#FCEBEB':'#EAF3DE';
+      var bt  = r.v<70?'Baja':r.v>130?'Alta':'Normal';
+      items+='<div style="display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #eee;gap:10px;">'
+        +'<div style="min-width:42px;text-align:center;"><div style="font-size:11px;font-weight:600;color:#666;">'+fDay(r.ts)+'</div><div style="font-size:10px;color:#999;">'+fTime(r.ts)+'</div></div>'
+        +'<div style="flex:1;min-width:0;">'
+        +'<span style="font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;background:'+bg+';color:'+col+';">'+bt+'</span>'
+        +'<div style="font-size:11px;color:#666;margin-top:3px;">'+r.m+(r.n?' · <em style="color:#999">'+r.n+'</em>':'')+'</div></div>'
+        +'<div style="text-align:right;"><div style="font-size:15px;font-weight:600;">'+r.v+'</div><div style="font-size:11px;color:#999;">mg/dL</div></div>'
+        +'<button onclick="borrar('+ri+')" style="background:none;border:none;cursor:pointer;color:#ccc;padding:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg></button>'
+        +'</div>';
     } else {
-      var bc2 = r.s < 90 ? 'blo' : r.s > 140 ? 'bhi' : 'bok';
-      var bt2 = r.s < 90 ? 'Baja' : r.s > 140 ? 'Alta' : 'Normal';
-      items += '<div class="hi"><div class="hdate"><div class="hd">'+fDay(r.ts)+'</div><div class="ht">'+fTime(r.ts)+'</div></div>'
-        +'<div class="hcnt"><span class="hb bbp">Tensión</span> <span class="hb '+bc2+'" style="font-size:10px">'+bt2+'</span>'
-        +(r.n?'<div class="hmom" style="margin-top:2px"><em style="color:var(--txt3)">'+esc(r.n)+'</em></div>':'')+'</div>'
-        +'<div class="hval"><div class="hvm">'+r.s+'/'+r.di+'</div><div class="hvu">mmHg</div></div>'+db+'</div>';
+      var col2=r.s<90?'#854F0B':r.s>140?'#A32D2D':'#3B6D11';
+      var bg2 =r.s<90?'#FAEEDA':r.s>140?'#FCEBEB':'#EAF3DE';
+      var bt2 =r.s<90?'Baja':r.s>140?'Alta':'Normal';
+      items+='<div style="display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #eee;gap:10px;">'
+        +'<div style="min-width:42px;text-align:center;"><div style="font-size:11px;font-weight:600;color:#666;">'+fDay(r.ts)+'</div><div style="font-size:10px;color:#999;">'+fTime(r.ts)+'</div></div>'
+        +'<div style="flex:1;min-width:0;">'
+        +'<span style="font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;background:#EEEDFE;color:#3C3489;">Tensión</span> '
+        +'<span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;background:'+bg2+';color:'+col2+';">'+bt2+'</span>'
+        +(r.n?'<div style="font-size:11px;color:#999;margin-top:2px;"><em>'+r.n+'</em></div>':'')+'</div>'
+        +'<div style="text-align:right;"><div style="font-size:15px;font-weight:600;">'+r.s+'/'+r.di+'</div><div style="font-size:11px;color:#999;">mmHg</div></div>'
+        +'<button onclick="borrar('+ri+')" style="background:none;border:none;cursor:pointer;color:#ccc;padding:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg></button>'
+        +'</div>';
     }
   }
-  el.innerHTML = '<div class="fprow">'
-    +'<button class="fp'+(CF==='tod'?' on':'')+'" onclick="filtro('tod')">Todos</button>'
-    +'<button class="fp'+(CF==='glu'?' on':'')+'" onclick="filtro('glu')">Glucosa</button>'
-    +'<button class="fp'+(CF==='ten'?' on':'')+'" onclick="filtro('ten')">Tensión</button>'
-    +'</div><div class="card" style="margin-top:10px">'
-    +(recs.length ? items : '<div class="empty"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Sin registros aún.<br>Añade mediciones desde Inicio.</div>')
-    +'</div><div style="height:12px"></div>';
+
+  el.innerHTML =
+    '<div style="display:flex;gap:6px;padding:10px 12px 0;overflow-x:auto;">'
+    +'<button onclick="setF('tod')" style="padding:6px 12px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid '+(CF==='tod'?'#185FA5':'#ddd')+';background:'+(CF==='tod'?'#185FA5':'white')+';color:'+(CF==='tod'?'white':'#666')+';cursor:pointer;white-space:nowrap;">Todos</button>'
+    +'<button onclick="setF('glu')" style="padding:6px 12px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid '+(CF==='glu'?'#185FA5':'#ddd')+';background:'+(CF==='glu'?'#185FA5':'white')+';color:'+(CF==='glu'?'white':'#666')+';cursor:pointer;white-space:nowrap;">Glucosa</button>'
+    +'<button onclick="setF('ten')" style="padding:6px 12px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid '+(CF==='ten'?'#185FA5':'#ddd')+';background:'+(CF==='ten'?'#185FA5':'white')+';color:'+(CF==='ten'?'white':'#666')+';cursor:pointer;white-space:nowrap;">Tensión</button>'
+    +'</div>'
+    +'<div style="background:white;border-radius:12px;margin:10px 12px 0;border:1px solid #eee;">'
+    +(recs.length ? items : '<div style="text-align:center;padding:40px 20px;color:#ccc;font-size:14px;">Sin registros aún.<br>Añade mediciones desde Inicio.</div>')
+    +'</div><div style="height:12px;"></div>';
 }
 
-function filtro(f) { CF = f; irTab('his'); }
+function setF(f) { CF=f; irTab('his'); }
 
 function borrar(idx) {
   if (!confirm('¿Eliminar este registro?')) return;
-  var d = leer();
-  d.r.splice(idx, 1);
-  guardar(d);
-  toast('Eliminado');
-  irTab('his');
+  var d=leer(); d.r.splice(idx,1); guardar(d);
+  toast('Eliminado'); irTab('his');
 }
 
-// TAB GRAFICAS
-function tGraficas(el) {
-  var d = leer();
-  var gr = [], br = [];
-  for (var i = 0; i < d.r.length; i++) {
-    var r = d.r[i];
-    if (r.u === CU && r.t === 'g') gr.push(r);
-    if (r.u === CU && r.t === 'b') br.push(r);
+// ── GRAFICAS ──────────────────────────────────────────────────────────────
+function tabGraficas(el) {
+  var d=leer(), gr=[], br=[];
+  for (var i=0;i<d.r.length;i++) {
+    if (d.r[i].u===CU&&d.r[i].t==='g') gr.push(d.r[i]);
+    if (d.r[i].u===CU&&d.r[i].t==='b') br.push(d.r[i]);
   }
-  gr = gr.slice(-15); br = br.slice(-10);
-  el.innerHTML = '<div class="card" style="margin-top:12px"><div class="chd">Glucosa — últimas mediciones</div><div class="cbd" style="padding:10px">'
-    +(gr.length<2?'<div class="empty" style="padding:24px 0">Añade al menos 2 registros.</div>':'<div style="position:relative;height:180px"><canvas id="gc"></canvas></div>')
-    +'</div></div><div class="card"><div class="chd">Tensión sistólica / diastólica</div><div class="cbd" style="padding:10px">'
-    +(br.length<2?'<div class="empty" style="padding:24px 0">Añade al menos 2 registros de tensión.</div>':'<div style="position:relative;height:180px"><canvas id="bc"></canvas></div>')
-    +'</div></div><div style="height:12px"></div>';
+  gr=gr.slice(-15); br=br.slice(-10);
+  el.innerHTML =
+    '<div style="background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;">'
+    +'<div style="padding:11px 14px 9px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.06em;">Glucosa</div>'
+    +'<div style="padding:10px;">'
+    +(gr.length<2?'<div style="text-align:center;padding:24px 0;color:#ccc;font-size:14px;">Añade al menos 2 registros.</div>':'<div style="position:relative;height:180px;"><canvas id="gc"></canvas></div>')
+    +'</div></div>'
+    +'<div style="background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;">'
+    +'<div style="padding:11px 14px 9px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.06em;">Tensión</div>'
+    +'<div style="padding:10px;">'
+    +(br.length<2?'<div style="text-align:center;padding:24px 0;color:#ccc;font-size:14px;">Añade al menos 2 registros.</div>':'<div style="position:relative;height:180px;"><canvas id="bc"></canvas></div>')
+    +'</div></div>'
+    +'<div style="height:12px;"></div>';
   if (gr.length>=2) {
-    var gl=[], gv=[];
+    var gl=[],gv=[];
     for(var a=0;a<gr.length;a++){gl.push(fDay(gr[a].ts));gv.push(gr[a].v);}
     setTimeout(function(){chart('gc',gl,[{d:gv,c:'#185FA5'}],[70,130]);},80);
   }
   if (br.length>=2) {
-    var bl=[], bs=[], bd=[];
+    var bl=[],bs=[],bd=[];
     for(var b=0;b<br.length;b++){bl.push(fDay(br[b].ts));bs.push(br[b].s);bd.push(br[b].di);}
     setTimeout(function(){chart('bc',bl,[{d:bs,c:'#3C3489'},{d:bd,c:'#854F0B'}],[60,140]);},80);
   }
 }
 
 function chart(cid,labels,sets,ref) {
-  var cv = document.getElementById(cid); if(!cv) return;
-  var cx = cv.getContext('2d');
-  var W = cv.parentElement.clientWidth, H = 180;
+  var cv=document.getElementById(cid); if(!cv) return;
+  var cx=cv.getContext('2d');
+  var W=cv.parentElement.clientWidth, H=180;
   cv.width=W; cv.height=H;
   var P={t:14,r:14,b:30,l:38};
   var CW=W-P.l-P.r, CH=H-P.t-P.b;
@@ -457,62 +409,64 @@ function chart(cid,labels,sets,ref) {
   var n=labels.length;
   function sx(i){return P.l+i*(CW/(n-1));}
   function sy(v){return P.t+CH-(v-mn)/(mx-mn)*CH;}
-  var dk=window.matchMedia('(prefers-color-scheme:dark)').matches;
-  var gc=dk?'rgba(255,255,255,.08)':'rgba(0,0,0,.07)';
-  var tc=dk?'#6e6e68':'#9a9a94';
   cx.clearRect(0,0,W,H);
   for(var s=0;s<=4;s++){
-    var t=s/4, y=P.t+CH*t;
-    cx.strokeStyle=gc;cx.lineWidth=.5;cx.beginPath();cx.moveTo(P.l,y);cx.lineTo(P.l+CW,y);cx.stroke();
-    cx.fillStyle=tc;cx.font='10px -apple-system,sans-serif';cx.textAlign='right';
+    var t=s/4,y=P.t+CH*t;
+    cx.strokeStyle='rgba(0,0,0,.07)'; cx.lineWidth=.5;
+    cx.beginPath(); cx.moveTo(P.l,y); cx.lineTo(P.l+CW,y); cx.stroke();
+    cx.fillStyle='#999'; cx.font='10px sans-serif'; cx.textAlign='right';
     cx.fillText(Math.round(mx-t*(mx-mn)),P.l-4,y+3);
   }
-  cx.fillStyle=dk?'rgba(59,109,17,.12)':'rgba(59,109,17,.1)';
+  cx.fillStyle='rgba(59,109,17,.1)';
   cx.fillRect(P.l,sy(ref[1]),CW,sy(ref[0])-sy(ref[1]));
   for(var di=0;di<sets.length;di++){
     var ds=sets[di];
-    cx.strokeStyle=ds.c;cx.lineWidth=2;cx.lineJoin='round';
+    cx.strokeStyle=ds.c; cx.lineWidth=2; cx.lineJoin='round';
     cx.beginPath();
     for(var pi=0;pi<ds.d.length;pi++){pi?cx.lineTo(sx(pi),sy(ds.d[pi])):cx.moveTo(sx(pi),sy(ds.d[pi]));}
     cx.stroke();
     for(var dot=0;dot<ds.d.length;dot++){
-      cx.fillStyle=ds.c;cx.beginPath();cx.arc(sx(dot),sy(ds.d[dot]),3.5,0,Math.PI*2);cx.fill();
-      cx.fillStyle=dk?'#1c1c1e':'#fff';cx.beginPath();cx.arc(sx(dot),sy(ds.d[dot]),1.5,0,Math.PI*2);cx.fill();
+      cx.fillStyle=ds.c; cx.beginPath(); cx.arc(sx(dot),sy(ds.d[dot]),3.5,0,Math.PI*2); cx.fill();
+      cx.fillStyle='white'; cx.beginPath(); cx.arc(sx(dot),sy(ds.d[dot]),1.5,0,Math.PI*2); cx.fill();
     }
   }
-  cx.fillStyle=tc;cx.font='10px -apple-system,sans-serif';cx.textAlign='center';
+  cx.fillStyle='#999'; cx.font='10px sans-serif'; cx.textAlign='center';
   for(var li=0;li<labels.length;li++) cx.fillText(labels[li],sx(li),H-8);
 }
 
-// TAB EXPORTAR
-function tExportar(el) {
-  var d = leer();
-  var tot=d.r.length, mio=0;
+// ── EXPORTAR ──────────────────────────────────────────────────────────────
+function tabExportar(el) {
+  var d=leer(), tot=d.r.length, mio=0;
   for(var i=0;i<d.r.length;i++) if(d.r[i].u===CU) mio++;
-  var nm = d.n[CU]||CU;
-  el.innerHTML='<div class="card" style="margin-top:12px"><div class="chd">Exportar CSV</div>'
-    +'<div class="er"><div><div>Mis registros</div><div style="font-size:12px;color:var(--txt3)">'+mio+' registros de '+esc(nm)+'</div></div>'
-    +'<button class="bo" onclick="exportar('mio')"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Descargar</button></div>'
-    +'<div class="er"><div><div>Todos los usuarios</div><div style="font-size:12px;color:var(--txt3)">'+tot+' registros totales</div></div>'
-    +'<button class="bo" onclick="exportar('tod')"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Descargar</button></div>'
-    +'</div><div class="card"><div class="chd">Borrar mis datos</div>'
-    +'<div class="er"><div><div>Borrar mis registros</div><div style="font-size:12px;color:var(--red)">No se puede deshacer</div></div>'
-    +'<button class="bo" style="color:var(--red);border-color:var(--red)" onclick="borrarMio()">Borrar</button></div></div>'
-    +'<div style="height:12px"></div>';
+  var nm=d.n[CU]||CU;
+  el.innerHTML =
+    '<div style="background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;">'
+    +'<div style="padding:11px 14px 9px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.06em;">Exportar CSV</div>'
+    +'<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid #eee;gap:10px;">'
+    +'<div><div style="font-size:14px;">Mis registros</div><div style="font-size:12px;color:#999;">'+mio+' registros de '+nm+'</div></div>'
+    +'<button onclick="exportar('mio')" style="padding:8px 14px;border:1px solid #ddd;border-radius:8px;background:white;font-size:13px;cursor:pointer;">Descargar</button></div>'
+    +'<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;gap:10px;">'
+    +'<div><div style="font-size:14px;">Todos los usuarios</div><div style="font-size:12px;color:#999;">'+tot+' registros totales</div></div>'
+    +'<button onclick="exportar('tod')" style="padding:8px 14px;border:1px solid #ddd;border-radius:8px;background:white;font-size:13px;cursor:pointer;">Descargar</button></div>'
+    +'</div>'
+    +'<div style="background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;">'
+    +'<div style="padding:11px 14px 9px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.06em;">Borrar datos</div>'
+    +'<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;gap:10px;">'
+    +'<div><div style="font-size:14px;">Borrar mis registros</div><div style="font-size:12px;color:#A32D2D;">No se puede deshacer</div></div>'
+    +'<button onclick="borrarMio()" style="padding:8px 14px;border:1px solid #A32D2D;border-radius:8px;background:white;font-size:13px;color:#A32D2D;cursor:pointer;">Borrar</button></div></div>'
+    +'<div style="height:12px;"></div>';
 }
 
 function exportar(scope) {
-  var d = leer();
-  var recs = [];
+  var d=leer(), recs=[];
   for(var i=0;i<d.r.length;i++) {
-    if(scope==='mio' && d.r[i].u!==CU) continue;
+    if(scope==='mio'&&d.r[i].u!==CU) continue;
     recs.push(d.r[i]);
   }
   if(!recs.length){toast('No hay registros');return;}
   var rows=[['Usuario','Tipo','Fecha','Hora','Glucosa(mg/dL)','Sistolica','Diastolica','Momento','Nota']];
   for(var j=0;j<recs.length;j++){
-    var r=recs[j];
-    var dt=new Date(r.ts);
+    var r=recs[j], dt=new Date(r.ts);
     var f=dt.toLocaleDateString('es-ES');
     var h=dt.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
     var nm=d.n[r.u]||r.u;
@@ -529,9 +483,8 @@ function exportar(scope) {
   var blob=new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8;'});
   var url=URL.createObjectURL(blob);
   var a=document.createElement('a');
-  a.href=url;
-  a.download='misalud_'+new Date().toISOString().split('T')[0]+'.csv';
-  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  a.href=url; a.download='misalud_'+new Date().toISOString().split('T')[0]+'.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
   toast('CSV descargado ✓');
 }
@@ -541,11 +494,10 @@ function borrarMio() {
   var d=leer(), kept=[];
   for(var i=0;i<d.r.length;i++) if(d.r[i].u!==CU) kept.push(d.r[i]);
   d.r=kept; guardar(d);
-  toast('Registros borrados');
-  irTab('exp');
+  toast('Registros borrados'); irTab('exp');
 }
 
-// HELPERS
+// ── HELPERS ───────────────────────────────────────────────────────────────
 function fDay(ts){
   var now=new Date(),dt=new Date(ts);
   var diff=Math.floor((now-dt)/86400000);
@@ -555,15 +507,23 @@ function fDay(ts){
 }
 function fTime(ts){return new Date(ts).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});}
 function fRel(ts){var d=fDay(ts),t=fTime(ts);return d==='Hoy'?'Hoy '+t:d+' '+t;}
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
 function toast(msg){
   var t=document.getElementById('toast');
-  t.textContent=msg;t.className='toast on';
-  setTimeout(function(){t.className='toast';},2200);
+  t.textContent=msg; t.style.opacity='1';
+  setTimeout(function(){t.style.opacity='0';},2200);
 }
 
+// ── EVENTOS ───────────────────────────────────────────────────────────────
+document.getElementById('btnU1').addEventListener('click', function(){ entrar('u1'); });
+document.getElementById('btnU2').addEventListener('click', function(){ entrar('u2'); });
+document.getElementById('btnConf').addEventListener('click', abrirConf);
+document.getElementById('btnCambiarU').addEventListener('click', volverUsuarios);
+document.getElementById('btnGuardarConf').addEventListener('click', guardarConf);
+document.getElementById('btnCerrarConf').addEventListener('click', cerrarConf);
+
 // INIT
-refrUsuarios();
+initUsuarios();
 </script>
 </body>
 </html>
