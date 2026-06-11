@@ -13,98 +13,123 @@ input,textarea,button{font-family:inherit;}
 </style>
 </head>
 <body>
-<div id="pgU" style="background:white;min-height:100vh;padding:50px 24px 40px;text-align:center;">
-  <div style="width:64px;height:64px;background:#E6F1FB;border-radius:20px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-  <div style="font-size:24px;font-weight:700;margin-bottom:8px;">MiSalud</div>
-  <div style="font-size:15px;color:#666;margin-bottom:36px;">Selecciona tu perfil</div>
-  <button id="bU1" style="display:flex;align-items:center;gap:14px;width:100%;padding:18px 20px;background:white;border:1.5px solid #e8e8e5;border-radius:14px;margin-bottom:12px;cursor:pointer;text-align:left;">
-    <div id="avU1" style="width:46px;height:46px;border-radius:50%;background:#E6F1FB;color:#185FA5;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;flex-shrink:0;">L</div>
-    <div style="flex:1;"><div id="nmU1" style="font-size:16px;font-weight:600;">Luis</div><div id="sbU1" style="font-size:12px;color:#999;margin-top:2px;">Toca para continuar</div></div>
-    <span style="font-size:24px;color:#ccc;">&#8250;</span>
+
+<!-- PANTALLA USUARIO -->
+<div id="pgU" style="background:white;min-height:100vh;padding:36px 20px 32px;text-align:center;">
+  <div style="width:52px;height:52px;background:#E6F1FB;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+  <div style="font-size:20px;font-weight:700;margin-bottom:6px;">MiSalud</div>
+  <div style="font-size:13px;color:#888;margin-bottom:24px;">Selecciona tu perfil</div>
+
+  <button id="bU1" style="display:flex;align-items:center;gap:12px;width:100%;padding:13px 16px;background:white;border:1.5px solid #e8e8e5;border-radius:12px;margin-bottom:8px;cursor:pointer;text-align:left;">
+    <div id="avU1" style="width:38px;height:38px;border-radius:50%;background:#E6F1FB;color:#185FA5;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0;">L</div>
+    <div style="flex:1;"><div id="nmU1" style="font-size:15px;font-weight:600;">Luis</div><div id="sbU1" style="font-size:11px;color:#aaa;margin-top:1px;">Toca para continuar</div></div>
+    <span style="font-size:22px;color:#ccc;">&#8250;</span>
   </button>
-  <button id="bU2" style="display:flex;align-items:center;gap:14px;width:100%;padding:18px 20px;background:white;border:1.5px solid #e8e8e5;border-radius:14px;margin-bottom:20px;cursor:pointer;text-align:left;">
-    <div id="avU2" style="width:46px;height:46px;border-radius:50%;background:#EEEDFE;color:#3C3489;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;flex-shrink:0;">M</div>
-    <div style="flex:1;"><div id="nmU2" style="font-size:16px;font-weight:600;">Mi mujer</div><div id="sbU2" style="font-size:12px;color:#999;margin-top:2px;">Toca para continuar</div></div>
-    <span style="font-size:24px;color:#ccc;">&#8250;</span>
+  <button id="bU2" style="display:flex;align-items:center;gap:12px;width:100%;padding:13px 16px;background:white;border:1.5px solid #e8e8e5;border-radius:12px;margin-bottom:8px;cursor:pointer;text-align:left;">
+    <div id="avU2" style="width:38px;height:38px;border-radius:50%;background:#EEEDFE;color:#3C3489;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0;">M</div>
+    <div style="flex:1;"><div id="nmU2" style="font-size:15px;font-weight:600;">Mi mujer</div><div id="sbU2" style="font-size:11px;color:#aaa;margin-top:1px;">Toca para continuar</div></div>
+    <span style="font-size:22px;color:#ccc;">&#8250;</span>
   </button>
-  <button id="bCf" style="background:none;border:none;color:#aaa;font-size:13px;cursor:pointer;padding:10px;">&#9881;&#65039; Cambiar nombres</button>
+  <button id="bU3" style="display:flex;align-items:center;gap:12px;width:100%;padding:13px 16px;background:white;border:1.5px solid #e8e8e5;border-radius:12px;margin-bottom:16px;cursor:pointer;text-align:left;">
+    <div id="avU3" style="width:38px;height:38px;border-radius:50%;background:#FAEEDA;color:#854F0B;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0;">T</div>
+    <div style="flex:1;"><div id="nmU3" style="font-size:15px;font-weight:600;">Tess</div><div id="sbU3" style="font-size:11px;color:#aaa;margin-top:1px;">Toca para continuar</div></div>
+    <span style="font-size:22px;color:#ccc;">&#8250;</span>
+  </button>
+  <button id="bCf" style="background:none;border:none;color:#bbb;font-size:12px;cursor:pointer;padding:8px;">&#9881;&#65039; Cambiar nombres</button>
 </div>
 
+<!-- MODAL NOMBRES -->
 <div id="mdCf" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:flex-end;justify-content:center;">
-  <div style="background:white;border-radius:20px 20px 0 0;padding:24px;width:100%;max-width:430px;">
-    <div style="font-size:17px;font-weight:600;margin-bottom:18px;">Cambiar nombres</div>
-    <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:6px;">USUARIO 1</label>
-    <input id="iN1" type="text" maxlength="20" style="width:100%;height:46px;padding:0 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:16px;background:#f8f8f6;margin-bottom:14px;">
-    <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:6px;">USUARIO 2</label>
-    <input id="iN2" type="text" maxlength="20" style="width:100%;height:46px;padding:0 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:16px;background:#f8f8f6;margin-bottom:20px;">
-    <button id="bSvCf" style="width:100%;height:48px;background:#185FA5;color:white;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Guardar</button>
-    <button id="bClCf" style="width:100%;padding:12px;border:none;background:none;color:#888;font-size:14px;cursor:pointer;">Cancelar</button>
+  <div style="background:white;border-radius:20px 20px 0 0;padding:20px;width:100%;max-width:430px;">
+    <div style="font-size:16px;font-weight:600;margin-bottom:14px;">Cambiar nombres</div>
+    <label style="font-size:11px;font-weight:600;color:#888;display:block;margin-bottom:5px;">USUARIO 1</label>
+    <input id="iN1" type="text" maxlength="20" style="width:100%;height:42px;padding:0 12px;border:1.5px solid #e0e0e0;border-radius:9px;font-size:15px;background:#f8f8f6;margin-bottom:10px;">
+    <label style="font-size:11px;font-weight:600;color:#888;display:block;margin-bottom:5px;">USUARIO 2</label>
+    <input id="iN2" type="text" maxlength="20" style="width:100%;height:42px;padding:0 12px;border:1.5px solid #e0e0e0;border-radius:9px;font-size:15px;background:#f8f8f6;margin-bottom:10px;">
+    <label style="font-size:11px;font-weight:600;color:#888;display:block;margin-bottom:5px;">USUARIO 3</label>
+    <input id="iN3" type="text" maxlength="20" style="width:100%;height:42px;padding:0 12px;border:1.5px solid #e0e0e0;border-radius:9px;font-size:15px;background:#f8f8f6;margin-bottom:16px;">
+    <button id="bSvCf" style="width:100%;height:44px;background:#185FA5;color:white;border:none;border-radius:9px;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:8px;">Guardar</button>
+    <button id="bClCf" style="width:100%;padding:10px;border:none;background:none;color:#888;font-size:13px;cursor:pointer;">Cancelar</button>
   </div>
 </div>
 
+<!-- APP -->
 <div id="pgA" style="display:none;min-height:100vh;flex-direction:column;">
-  <div style="background:white;border-bottom:1px solid #eee;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;">
-    <div><div style="font-size:16px;font-weight:700;">&#9829; MiSalud</div><div id="tbF" style="font-size:11px;color:#aaa;margin-top:1px;"></div></div>
-    <button id="bCU" style="display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:20px;background:#f4f4f2;border:none;font-size:13px;font-weight:500;color:#555;cursor:pointer;">
-      <div id="tbAv" style="width:24px;height:24px;border-radius:50%;background:#E6F1FB;color:#185FA5;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">L</div>
+  <div style="background:white;border-bottom:1px solid #eee;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;">
+    <div><div style="font-size:15px;font-weight:700;">&#9829; MiSalud</div><div id="tbF" style="font-size:10px;color:#bbb;margin-top:1px;"></div></div>
+    <button id="bCU" style="display:flex;align-items:center;gap:7px;padding:5px 10px;border-radius:20px;background:#f4f4f2;border:none;font-size:12px;font-weight:500;color:#555;cursor:pointer;">
+      <div id="tbAv" style="width:22px;height:22px;border-radius:50%;background:#E6F1FB;color:#185FA5;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;">L</div>
       <span id="tbNm">Luis</span>
     </button>
   </div>
-  <div id="tc" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:70px;"></div>
+  <div id="tc" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:58px;"></div>
   <div style="position:fixed;bottom:0;left:0;right:0;max-width:430px;margin:0 auto;background:white;border-top:1px solid #eee;display:flex;z-index:10;">
-    <button id="nIni" style="flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#185FA5;border:none;background:none;cursor:pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</button>
-    <button id="nHis" style="flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#aaa;border:none;background:none;cursor:pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Historial</button>
-    <button id="nGrf" style="flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#aaa;border:none;background:none;cursor:pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Gr&#225;ficas</button>
-    <button id="nExp" style="flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#aaa;border:none;background:none;cursor:pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Exportar</button>
+    <button id="nIni" style="flex:1;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:#185FA5;border:none;background:none;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</button>
+    <button id="nHis" style="flex:1;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:#aaa;border:none;background:none;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Historial</button>
+    <button id="nFam" style="flex:1;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:#aaa;border:none;background:none;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Familia</button>
+    <button id="nGrf" style="flex:1;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:#aaa;border:none;background:none;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Gráficas</button>
+    <button id="nExp" style="flex:1;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:#aaa;border:none;background:none;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Exportar</button>
   </div>
 </div>
-
-<div id="tst" style="position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:#111;color:white;padding:10px 20px;border-radius:20px;font-size:13px;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap;z-index:999;"></div>
-
+<div id="tst" style="position:fixed;bottom:72px;left:50%;transform:translateX(-50%);background:#111;color:white;padding:9px 18px;border-radius:20px;font-size:12px;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap;z-index:999;"></div>
 <script>
 var SK="ms6",MEM=null,CU=null,CF="tod",CM="Ayuno";
-function leer(){try{var r=localStorage.getItem(SK);if(r){MEM=JSON.parse(r);return MEM;}}catch(e){}if(MEM)return MEM;MEM={n:{u1:"Luis",u2:"Mi mujer"},r:[]};return MEM;}
+var UCOLS={u1:{bg:"#E6F1FB",cl:"#185FA5"},u2:{bg:"#EEEDFE",cl:"#3C3489"},u3:{bg:"#FAEEDA",cl:"#854F0B"}};
+
+function leer(){try{var r=localStorage.getItem(SK);if(r){MEM=JSON.parse(r);return MEM;}}catch(e){}if(MEM)return MEM;MEM={n:{u1:"Luis",u2:"Mi mujer",u3:"Tess"},r:[]};return MEM;}
 function guardar(d){MEM=d;try{localStorage.setItem(SK,JSON.stringify(d));}catch(e){}}
 function fDay(ts){var now=new Date(),dt=new Date(ts),diff=Math.floor((now-dt)/86400000);if(diff===0)return"Hoy";if(diff===1)return"Ayer";return dt.toLocaleDateString("es-ES",{day:"numeric",month:"short"});}
 function fTime(ts){return new Date(ts).toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"});}
 function fRel(ts){var d=fDay(ts),t=fTime(ts);return d==="Hoy"?"Hoy "+t:d+" "+t;}
 function toast(msg){var t=document.getElementById("tst");t.textContent=msg;t.style.opacity="1";setTimeout(function(){t.style.opacity="0";},2200);}
+function uNm(uid){var d=leer();return d.n[uid]||(uid==="u1"?"Luis":uid==="u2"?"Mi mujer":"Tess");}
 
 function initU(){
-  var d=leer(),n1=d.n.u1||"Luis",n2=d.n.u2||"Mi mujer";
-  document.getElementById("nmU1").textContent=n1;
-  document.getElementById("nmU2").textContent=n2;
-  document.getElementById("avU1").textContent=n1[0].toUpperCase();
-  document.getElementById("avU2").textContent=n2[0].toUpperCase();
-  var c1=0,c2=0;
-  for(var i=0;i<d.r.length;i++){if(d.r[i].u==="u1")c1++;if(d.r[i].u==="u2")c2++;}
-  document.getElementById("sbU1").textContent=c1>0?c1+" registros":"Toca para continuar";
-  document.getElementById("sbU2").textContent=c2>0?c2+" registros":"Toca para continuar";
+  var d=leer();
+  if(!d.n.u3)d.n.u3="Tess";
+  var ids=["u1","u2","u3"];
+  for(var i=0;i<ids.length;i++){
+    var uid=ids[i],n=d.n[uid]||"";
+    document.getElementById("nmU"+(i+1)).textContent=n;
+    document.getElementById("avU"+(i+1)).textContent=n[0].toUpperCase();
+  }
+  var counts={u1:0,u2:0,u3:0};
+  for(var j=0;j<d.r.length;j++)if(counts[d.r[j].u]!==undefined)counts[d.r[j].u]++;
+  for(var k=0;k<ids.length;k++){
+    var c=counts[ids[k]];
+    document.getElementById("sbU"+(k+1)).textContent=c>0?c+" registros":"Toca para continuar";
+  }
 }
 
 function entrar(uid){
   CU=uid;
-  var d=leer(),nm=d.n[uid]||(uid==="u1"?"Luis":"Mi mujer");
+  var nm=uNm(uid),col=UCOLS[uid]||UCOLS.u1;
   document.getElementById("tbNm").textContent=nm;
   document.getElementById("tbAv").textContent=nm[0].toUpperCase();
-  document.getElementById("tbAv").style.background=uid==="u1"?"#E6F1FB":"#EEEDFE";
-  document.getElementById("tbAv").style.color=uid==="u1"?"#185FA5":"#3C3489";
+  document.getElementById("tbAv").style.background=col.bg;
+  document.getElementById("tbAv").style.color=col.cl;
   document.getElementById("tbF").textContent=new Date().toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"});
   document.getElementById("pgU").style.display="none";
   document.getElementById("pgA").style.display="flex";
   irTab("ini");
 }
 function volverU(){document.getElementById("pgA").style.display="none";document.getElementById("pgU").style.display="block";initU();}
-function abrirCf(){var d=leer();document.getElementById("iN1").value=d.n.u1||"Luis";document.getElementById("iN2").value=d.n.u2||"Mi mujer";document.getElementById("mdCf").style.display="flex";}
+function abrirCf(){var d=leer();document.getElementById("iN1").value=d.n.u1||"Luis";document.getElementById("iN2").value=d.n.u2||"Mi mujer";document.getElementById("iN3").value=d.n.u3||"Tess";document.getElementById("mdCf").style.display="flex";}
 function cerrarCf(){document.getElementById("mdCf").style.display="none";}
-function guardarCf(){var d=leer();d.n.u1=document.getElementById("iN1").value.trim()||"Luis";d.n.u2=document.getElementById("iN2").value.trim()||"Mi mujer";guardar(d);cerrarCf();initU();toast("Nombres actualizados");}
+function guardarCf(){var d=leer();d.n.u1=document.getElementById("iN1").value.trim()||"Luis";d.n.u2=document.getElementById("iN2").value.trim()||"Mi mujer";d.n.u3=document.getElementById("iN3").value.trim()||"Tess";guardar(d);cerrarCf();initU();toast("Nombres actualizados");}
 
 function irTab(t){
-  var tabs=["ini","his","grf","exp"],ids=["nIni","nHis","nGrf","nExp"];
+  var tabs=["ini","his","fam","grf","exp"],ids=["nIni","nHis","nFam","nGrf","nExp"];
   for(var i=0;i<tabs.length;i++)document.getElementById(ids[i]).style.color=tabs[i]===t?"#185FA5":"#aaa";
   var c=document.getElementById("tc");
-  if(t==="ini")tIni(c);else if(t==="his")tHis(c);else if(t==="grf")tGrf(c);else tExp(c);
+  if(t==="ini")tIni(c);else if(t==="his")tHis(c);else if(t==="fam")tFam(c);else if(t==="grf")tGrf(c);else tExp(c);
   c.scrollTop=0;
+}
+
+function card(titulo,contenido){
+  return "<div style=\"background:white;border-radius:11px;margin:10px 10px 0;border:1px solid #eee;\">"
+    +"<div style=\"padding:10px 12px 8px;border-bottom:1px solid #eee;font-size:10px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.06em;\">"+titulo+"</div>"
+    +"<div style=\"padding:12px;\">"+contenido+"</div></div>";
 }
 
 function tIni(el){
@@ -115,35 +140,40 @@ function tIni(el){
   var segs="";
   for(var m=0;m<moms.length;m++){
     var act=CM===moms[m][0];
-    segs+="<button onclick=\"selMom(this)\" data-m=\""+moms[m][0]+"\" style=\"flex:1;padding:8px 2px;border:none;border-radius:7px;font-size:11px;font-weight:500;cursor:pointer;background:"+(act?"white":"transparent")+";color:"+(act?"#1a1a18":"#777")+";box-shadow:"+(act?"0 1px 3px rgba(0,0,0,.1)":"none")+";\">"+moms[m][1]+"</button>";
+    segs+="<button onclick=\"selMom(this)\" data-m=\""+moms[m][0]+"\" style=\"flex:1;padding:6px 2px;border:none;border-radius:6px;font-size:11px;font-weight:500;cursor:pointer;background:"+(act?"white":"transparent")+";color:"+(act?"#1a1a18":"#888")+";box-shadow:"+(act?"0 1px 3px rgba(0,0,0,.1)":"none")+";\">"+moms[m][1]+"</button>";
   }
-  var statG=lg?"<div style=\"font-size:21px;font-weight:700;\">"+lg.v+"<span style=\"font-size:11px;color:#aaa;font-weight:400;\"> mg/dL</span></div><div style=\"font-size:11px;color:#aaa;margin-top:2px;\">"+fRel(lg.ts)+"</div>":"<div style=\"font-size:15px;color:#ddd;\">\u2014</div><div style=\"font-size:11px;color:#ddd;\">Sin datos</div>";
-  var statB=lb?"<div style=\"font-size:21px;font-weight:700;\">"+lb.s+"/"+lb.di+"</div><div style=\"font-size:11px;color:#aaa;margin-top:2px;\">"+fRel(lb.ts)+"</div>":"<div style=\"font-size:15px;color:#ddd;\">\u2014</div><div style=\"font-size:11px;color:#ddd;\">Sin datos</div>";
+  var sG=lg?"<b style=\"font-size:19px;\">"+lg.v+"</b><span style=\"font-size:10px;color:#aaa;\"> mg/dL</span><div style=\"font-size:10px;color:#aaa;margin-top:1px;\">"+fRel(lg.ts)+"</div>":"<span style=\"font-size:14px;color:#ddd;\">\u2014</span><div style=\"font-size:10px;color:#ddd;\">Sin datos</div>";
+  var sB=lb?"<b style=\"font-size:19px;\">"+lb.s+"/"+lb.di+"</b>"+(lb.hr?"<span style=\"font-size:10px;color:#aaa;\"> &bull;"+lb.hr+"ppm</span>":"")+"<div style=\"font-size:10px;color:#aaa;margin-top:1px;\">"+fRel(lb.ts)+"</div>":"<span style=\"font-size:14px;color:#ddd;\">\u2014</span><div style=\"font-size:10px;color:#ddd;\">Sin datos</div>";
+
   el.innerHTML=
-    "<div style=\"display:flex;gap:8px;padding:12px 12px 0;\">"
-    +"<div style=\"flex:1;background:white;border-radius:12px;padding:13px;border:1px solid #eee;text-align:center;\"><div style=\"font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;\">Glucosa</div>"+statG+"</div>"
-    +"<div style=\"flex:1;background:white;border-radius:12px;padding:13px;border:1px solid #eee;text-align:center;\"><div style=\"font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;\">Tensi\xf3n</div>"+statB+"</div></div>"
-    +"<div style=\"background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;\">"
-    +"<div style=\"padding:12px 14px 10px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;\">Registrar glucosa</div>"
-    +"<div style=\"padding:14px;\">"
-    +"<label style=\"font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:7px;\">VALOR</label>"
-    +"<div style=\"display:flex;gap:8px;align-items:center;margin-bottom:14px;\"><input type=\"number\" id=\"igv\" inputmode=\"decimal\" placeholder=\"ej. 98\" style=\"flex:1;height:46px;padding:0 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:17px;background:#f8f8f6;\"><span style=\"font-size:12px;color:#aaa;width:44px;text-align:center;flex-shrink:0;\">mg/dL</span></div>"
-    +"<label style=\"font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:7px;\">MOMENTO</label>"
-    +"<div style=\"display:flex;gap:4px;background:#f4f4f2;padding:3px;border-radius:9px;margin-bottom:14px;\">"+segs+"</div>"
-    +"<label style=\"font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:7px;\">NOTA (opcional)</label>"
-    +"<textarea id=\"ign\" rows=\"2\" placeholder=\"Ej: despu\xe9s del desayuno...\" style=\"width:100%;padding:10px 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:14px;background:#f8f8f6;resize:none;\"></textarea>"
-    +"<button id=\"bSvG\" style=\"width:100%;height:48px;margin-top:12px;background:#185FA5;color:white;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;\">Guardar glucosa</button>"
-    +"</div></div>"
-    +"<div style=\"background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;\">"
-    +"<div style=\"padding:12px 14px 10px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;\">Registrar tensi\xf3n <span style=\"font-size:10px;color:#ccc;font-weight:400;text-transform:none;\">(opcional)</span></div>"
-    +"<div style=\"padding:14px;\">"
-    +"<label style=\"font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:7px;\">SIST\xd3LICA / DIAST\xd3LICA</label>"
-    +"<div style=\"display:flex;gap:6px;align-items:center;margin-bottom:14px;\"><input type=\"number\" id=\"isv\" inputmode=\"decimal\" placeholder=\"125\" style=\"flex:1;height:46px;padding:0 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:17px;background:#f8f8f6;min-width:0;\"><span style=\"font-size:20px;color:#ccc;flex-shrink:0;\">/</span><input type=\"number\" id=\"idv\" inputmode=\"decimal\" placeholder=\"82\" style=\"flex:1;height:46px;padding:0 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:17px;background:#f8f8f6;min-width:0;\"><span style=\"font-size:12px;color:#aaa;width:44px;text-align:center;flex-shrink:0;\">mmHg</span></div>"
-    +"<label style=\"font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:7px;\">NOTA (opcional)</label>"
-    +"<textarea id=\"ibn\" rows=\"2\" placeholder=\"Ej: en reposo...\" style=\"width:100%;padding:10px 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:14px;background:#f8f8f6;resize:none;\"></textarea>"
-    +"<button id=\"bSvB\" style=\"width:100%;height:48px;margin-top:12px;background:#3C3489;color:white;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;\">Guardar tensi\xf3n</button>"
-    +"</div></div>"
-    +"<div style=\"height:12px;\"></div>";
+    "<div style=\"display:flex;gap:7px;padding:10px 10px 0;\">"
+    +"<div style=\"flex:1;background:white;border-radius:11px;padding:10px;border:1px solid #eee;text-align:center;\"><div style=\"font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;\">Glucosa</div>"+sG+"</div>"
+    +"<div style=\"flex:1;background:white;border-radius:11px;padding:10px;border:1px solid #eee;text-align:center;\"><div style=\"font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;\">Tensi\xf3n</div>"+sB+"</div></div>"
+
+    +card("Registrar glucosa",
+      "<label style=\"font-size:11px;font-weight:600;color:#888;display:block;margin-bottom:5px;\">VALOR</label>"
+      +"<div style=\"display:flex;gap:7px;align-items:center;margin-bottom:10px;\"><input type=\"number\" id=\"igv\" inputmode=\"decimal\" placeholder=\"ej. 98\" style=\"flex:1;height:40px;padding:0 11px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:16px;background:#f8f8f6;\"><span style=\"font-size:11px;color:#aaa;width:40px;text-align:center;flex-shrink:0;\">mg/dL</span></div>"
+      +"<label style=\"font-size:11px;font-weight:600;color:#888;display:block;margin-bottom:5px;\">MOMENTO</label>"
+      +"<div style=\"display:flex;gap:3px;background:#f4f4f2;padding:3px;border-radius:8px;margin-bottom:10px;\">"+segs+"</div>"
+      +"<label style=\"font-size:11px;font-weight:600;color:#888;display:block;margin-bottom:5px;\">NOTA (opcional)</label>"
+      +"<textarea id=\"ign\" rows=\"2\" placeholder=\"Ej: despu\xe9s del desayuno...\" style=\"width:100%;padding:8px 11px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:13px;background:#f8f8f6;resize:none;\"></textarea>"
+      +"<button id=\"bSvG\" style=\"width:100%;height:42px;margin-top:10px;background:#185FA5;color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;\">Guardar glucosa</button>")
+
+    +card("Registrar tensi\xf3n <span style=\"font-size:9px;color:#ccc;font-weight:400;text-transform:none;\">(opcional)</span>",
+      "<label style=\"font-size:11px;font-weight:600;color:#888;display:block;margin-bottom:5px;\">SIST / DIAST / RITMO</label>"
+      +"<div style=\"display:flex;gap:5px;align-items:center;margin-bottom:10px;\">"
+      +"<input type=\"number\" id=\"isv\" inputmode=\"decimal\" placeholder=\"125\" style=\"flex:1;height:40px;padding:0 10px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:15px;background:#f8f8f6;min-width:0;\">"
+      +"<span style=\"font-size:16px;color:#ccc;flex-shrink:0;\">/</span>"
+      +"<input type=\"number\" id=\"idv\" inputmode=\"decimal\" placeholder=\"82\" style=\"flex:1;height:40px;padding:0 10px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:15px;background:#f8f8f6;min-width:0;\">"
+      +"<span style=\"font-size:16px;color:#ccc;flex-shrink:0;\">&#9829;</span>"
+      +"<input type=\"number\" id=\"ihr\" inputmode=\"decimal\" placeholder=\"72\" style=\"flex:1;height:40px;padding:0 10px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:15px;background:#f8f8f6;min-width:0;\">"
+      +"<span style=\"font-size:10px;color:#aaa;width:28px;text-align:center;flex-shrink:0;\">ppm</span></div>"
+      +"<label style=\"font-size:11px;font-weight:600;color:#888;display:block;margin-bottom:5px;\">NOTA (opcional)</label>"
+      +"<textarea id=\"ibn\" rows=\"2\" placeholder=\"Ej: en reposo...\" style=\"width:100%;padding:8px 11px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:13px;background:#f8f8f6;resize:none;\"></textarea>"
+      +"<button id=\"bSvB\" style=\"width:100%;height:42px;margin-top:10px;background:#3C3489;color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;\">Guardar tensi\xf3n</button>")
+
+    +"<div style=\"height:10px;\"></div>";
+
   document.getElementById("bSvG").addEventListener("click",function(){
     var v=parseFloat(document.getElementById("igv").value);
     if(!v||v<20||v>600){toast("Valor entre 20 y 600");return;}
@@ -155,88 +185,124 @@ function tIni(el){
   document.getElementById("bSvB").addEventListener("click",function(){
     var s=parseFloat(document.getElementById("isv").value),di=parseFloat(document.getElementById("idv").value);
     if(!s||!di){toast("Introduce sist\xf3lica y diast\xf3lica");return;}
+    var hr=parseFloat(document.getElementById("ihr").value)||0;
     var n=document.getElementById("ibn").value.trim();
-    var d=leer();d.r.push({u:CU,t:"b",s:s,di:di,n:n,ts:Date.now()});guardar(d);
-    document.getElementById("isv").value="";document.getElementById("idv").value="";document.getElementById("ibn").value="";
+    var d=leer();d.r.push({u:CU,t:"b",s:s,di:di,hr:hr,n:n,ts:Date.now()});guardar(d);
+    document.getElementById("isv").value="";document.getElementById("idv").value="";document.getElementById("ihr").value="";document.getElementById("ibn").value="";
     toast("Tensi\xf3n guardada \u2713");irTab("ini");
   });
 }
 
 function selMom(btn){
   var btns=document.querySelectorAll("[data-m]");
-  for(var i=0;i<btns.length;i++){btns[i].style.background="transparent";btns[i].style.color="#777";btns[i].style.boxShadow="none";}
+  for(var i=0;i<btns.length;i++){btns[i].style.background="transparent";btns[i].style.color="#888";btns[i].style.boxShadow="none";}
   btn.style.background="white";btn.style.color="#1a1a18";btn.style.boxShadow="0 1px 3px rgba(0,0,0,.1)";
   CM=btn.getAttribute("data-m");
+}
+
+function badgeG(v){var c=v<70?"#854F0B":v>130?"#A32D2D":"#3B6D11",bg=v<70?"#FAEEDA":v>130?"#FCEBEB":"#EAF3DE",t=v<70?"Baja":v>130?"Alta":"Normal";return "<span style=\"font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:"+bg+";color:"+c+";\">"+t+"</span>";}
+function badgeB(s){var c=s<90?"#854F0B":s>140?"#A32D2D":"#3B6D11",bg=s<90?"#FAEEDA":s>140?"#FCEBEB":"#EAF3DE",t=s<90?"Baja":s>140?"Alta":"Normal";return "<span style=\"font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:#EEEDFE;color:#3C3489;\">T</span> <span style=\"font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:"+bg+";color:"+c+";\">"+t+"</span>";}
+
+function rowG(r,ri,showUser){
+  var usr=showUser?"<span style=\"font-size:10px;color:#aaa;margin-right:4px;\">"+uNm(r.u)+"</span>":"";
+  return "<div style=\"display:flex;align-items:center;padding:9px 12px;border-bottom:1px solid #f0f0f0;gap:8px;\">"
+    +"<div style=\"min-width:36px;text-align:center;flex-shrink:0;\"><div style=\"font-size:10px;font-weight:600;color:#666;\">"+fDay(r.ts)+"</div><div style=\"font-size:9px;color:#bbb;\">"+fTime(r.ts)+"</div></div>"
+    +"<div style=\"flex:1;min-width:0;\">"+usr+badgeG(r.v)+"<div style=\"font-size:10px;color:#777;margin-top:2px;\">"+r.m+(r.n?" &middot; <em style=\"color:#bbb\">"+r.n+"</em>":"")+"</div></div>"
+    +"<div style=\"text-align:right;flex-shrink:0;\"><div style=\"font-size:14px;font-weight:600;\">"+r.v+"</div><div style=\"font-size:10px;color:#bbb;\">mg/dL</div></div>"
+    +(ri>=0?"<button onclick=\"borrar("+ri+")\" style=\"background:none;border:none;cursor:pointer;color:#ddd;padding:4px;flex-shrink:0;\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"3 6 5 6 21 6\"/><path d=\"M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6\"/></svg></button>":"")
+    +"</div>";
+}
+function rowB(r,ri,showUser){
+  var usr=showUser?"<span style=\"font-size:10px;color:#aaa;margin-right:4px;\">"+uNm(r.u)+"</span>":"";
+  return "<div style=\"display:flex;align-items:center;padding:9px 12px;border-bottom:1px solid #f0f0f0;gap:8px;\">"
+    +"<div style=\"min-width:36px;text-align:center;flex-shrink:0;\"><div style=\"font-size:10px;font-weight:600;color:#666;\">"+fDay(r.ts)+"</div><div style=\"font-size:9px;color:#bbb;\">"+fTime(r.ts)+"</div></div>"
+    +"<div style=\"flex:1;min-width:0;\">"+usr+badgeB(r.s)+(r.hr?"<span style=\"font-size:10px;color:#aaa;\"> &#9829;"+r.hr+"</span>":"")+(r.n?"<div style=\"font-size:10px;color:#bbb;margin-top:2px;\"><em>"+r.n+"</em></div>":"")+"</div>"
+    +"<div style=\"text-align:right;flex-shrink:0;\"><div style=\"font-size:14px;font-weight:600;\">"+r.s+"/"+r.di+"</div><div style=\"font-size:10px;color:#bbb;\">mmHg</div></div>"
+    +(ri>=0?"<button onclick=\"borrar("+ri+")\" style=\"background:none;border:none;cursor:pointer;color:#ddd;padding:4px;flex-shrink:0;\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"3 6 5 6 21 6\"/><path d=\"M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6\"/></svg></button>":"")
+    +"</div>";
 }
 
 function tHis(el){
   var d=leer(),recs=[];
   for(var i=d.r.length-1;i>=0;i--){var r=d.r[i];if(r.u!==CU)continue;if(CF==="glu"&&r.t!=="g")continue;if(CF==="ten"&&r.t!=="b")continue;recs.push({r:r,i:i});}
   var items="";
-  for(var k=0;k<recs.length;k++){
-    var r=recs[k].r,ri=recs[k].i;
-    if(r.t==="g"){
-      var col=r.v<70?"#854F0B":r.v>130?"#A32D2D":"#3B6D11",bg=r.v<70?"#FAEEDA":r.v>130?"#FCEBEB":"#EAF3DE",bt=r.v<70?"Baja":r.v>130?"Alta":"Normal";
-      items+="<div style=\"display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #f0f0f0;gap:10px;\"><div style=\"min-width:40px;text-align:center;flex-shrink:0;\"><div style=\"font-size:11px;font-weight:600;color:#666;\">"+fDay(r.ts)+"</div><div style=\"font-size:10px;color:#aaa;\">"+fTime(r.ts)+"</div></div><div style=\"flex:1;min-width:0;\"><span style=\"font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;background:"+bg+";color:"+col+";\">"+bt+"</span><div style=\"font-size:11px;color:#666;margin-top:3px;\">"+r.m+(r.n?" &middot; <em style=\"color:#aaa\">"+r.n+"</em>":"")+"</div></div><div style=\"text-align:right;flex-shrink:0;\"><div style=\"font-size:15px;font-weight:600;\">"+r.v+"</div><div style=\"font-size:11px;color:#aaa;\">mg/dL</div></div><button onclick=\"borrar("+ri+")\" style=\"background:none;border:none;cursor:pointer;color:#ddd;padding:6px;flex-shrink:0;\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"3 6 5 6 21 6\"/><path d=\"M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6\"/></svg></button></div>";
-    } else {
-      var col2=r.s<90?"#854F0B":r.s>140?"#A32D2D":"#3B6D11",bg2=r.s<90?"#FAEEDA":r.s>140?"#FCEBEB":"#EAF3DE",bt2=r.s<90?"Baja":r.s>140?"Alta":"Normal";
-      items+="<div style=\"display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #f0f0f0;gap:10px;\"><div style=\"min-width:40px;text-align:center;flex-shrink:0;\"><div style=\"font-size:11px;font-weight:600;color:#666;\">"+fDay(r.ts)+"</div><div style=\"font-size:10px;color:#aaa;\">"+fTime(r.ts)+"</div></div><div style=\"flex:1;min-width:0;\"><span style=\"font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;background:#EEEDFE;color:#3C3489;\">Tensi\xf3n</span> <span style=\"font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;background:"+bg2+";color:"+col2+";\">"+bt2+"</span>"+(r.n?"<div style=\"font-size:11px;color:#aaa;margin-top:2px;\"><em>"+r.n+"</em></div>":"")+"</div><div style=\"text-align:right;flex-shrink:0;\"><div style=\"font-size:15px;font-weight:600;\">"+r.s+"/"+r.di+"</div><div style=\"font-size:11px;color:#aaa;\">mmHg</div></div><button onclick=\"borrar("+ri+")\" style=\"background:none;border:none;cursor:pointer;color:#ddd;padding:6px;flex-shrink:0;\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"3 6 5 6 21 6\"/><path d=\"M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6\"/></svg></button></div>";
-    }
-  }
-  var fp="<div style=\"display:flex;gap:6px;padding:10px 12px 0;overflow-x:auto;\">"
-    +"<button onclick=\"setF(&quot;tod&quot;)\" style=\"padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1.5px solid "+(CF==="tod"?"#185FA5":"#e0e0e0")+";background:"+(CF==="tod"?"#185FA5":"white")+";color:"+(CF==="tod"?"white":"#666")+";cursor:pointer;white-space:nowrap;\">Todos</button>"
-    +"<button onclick=\"setF(&quot;glu&quot;)\" style=\"padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1.5px solid "+(CF==="glu"?"#185FA5":"#e0e0e0")+";background:"+(CF==="glu"?"#185FA5":"white")+";color:"+(CF==="glu"?"white":"#666")+";cursor:pointer;white-space:nowrap;\">Glucosa</button>"
-    +"<button onclick=\"setF(&quot;ten&quot;)\" style=\"padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1.5px solid "+(CF==="ten"?"#185FA5":"#e0e0e0")+";background:"+(CF==="ten"?"#185FA5":"white")+";color:"+(CF==="ten"?"white":"#666")+";cursor:pointer;white-space:nowrap;\">Tensi\xf3n</button>"
-    +"</div>";
-  el.innerHTML=fp
-    +"<div style=\"background:white;border-radius:12px;margin:10px 12px 0;border:1px solid #eee;\">"
-    +(recs.length?items:"<div style=\"text-align:center;padding:40px 20px;color:#ccc;font-size:14px;\">Sin registros a\xfan.</div>")
-    +"</div><div style=\"height:12px;\"></div>";
+  for(var k=0;k<recs.length;k++){var r=recs[k].r,ri=recs[k].i;items+=r.t==="g"?rowG(r,ri,false):rowB(r,ri,false);}
+  el.innerHTML="<div style=\"display:flex;gap:5px;padding:8px 10px 0;overflow-x:auto;\">"
+    +"<button onclick=\"setF(&quot;tod&quot;)\" style=\"padding:5px 12px;border-radius:20px;font-size:11px;font-weight:500;border:1.5px solid "+(CF==="tod"?"#185FA5":"#e0e0e0")+";background:"+(CF==="tod"?"#185FA5":"white")+";color:"+(CF==="tod"?"white":"#777")+";cursor:pointer;white-space:nowrap;\">Todos</button>"
+    +"<button onclick=\"setF(&quot;glu&quot;)\" style=\"padding:5px 12px;border-radius:20px;font-size:11px;font-weight:500;border:1.5px solid "+(CF==="glu"?"#185FA5":"#e0e0e0")+";background:"+(CF==="glu"?"#185FA5":"white")+";color:"+(CF==="glu"?"white":"#777")+";cursor:pointer;white-space:nowrap;\">Glucosa</button>"
+    +"<button onclick=\"setF(&quot;ten&quot;)\" style=\"padding:5px 12px;border-radius:20px;font-size:11px;font-weight:500;border:1.5px solid "+(CF==="ten"?"#185FA5":"#e0e0e0")+";background:"+(CF==="ten"?"#185FA5":"white")+";color:"+(CF==="ten"?"white":"#777")+";cursor:pointer;white-space:nowrap;\">Tensi\xf3n</button>"
+    +"</div>"
+    +"<div style=\"background:white;border-radius:11px;margin:8px 10px 0;border:1px solid #eee;\">"
+    +(recs.length?items:"<div style=\"text-align:center;padding:32px 16px;color:#ccc;font-size:13px;\">Sin registros a\xfan.</div>")
+    +"</div><div style=\"height:10px;\"></div>";
 }
 function setF(f){CF=f;irTab("his");}
 function borrar(idx){if(!confirm("\xbfEliminar?"))return;var d=leer();d.r.splice(idx,1);guardar(d);toast("Eliminado");irTab("his");}
+
+function tFam(el){
+  var d=leer();
+  var uids=["u1","u2","u3"];
+  var html="";
+  for(var u=0;u<uids.length;u++){
+    var uid=uids[u],nm=d.n[uid]||"",col=UCOLS[uid]||UCOLS.u1;
+    var urecs=[];
+    for(var i=d.r.length-1;i>=0;i--){if(d.r[i].u===uid)urecs.push(d.r[i]);}
+    if(!urecs.length)continue;
+    var rows="";
+    for(var k=0;k<Math.min(urecs.length,5);k++){var r=urecs[k];rows+=r.t==="g"?rowG(r,-1,false):rowB(r,-1,false);}
+    html+="<div style=\"background:white;border-radius:11px;margin:10px 10px 0;border:1px solid #eee;\">"
+      +"<div style=\"padding:10px 12px 8px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:8px;\">"
+      +"<div style=\"width:28px;height:28px;border-radius:50%;background:"+col.bg+";color:"+col.cl+";display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;\">"+nm[0].toUpperCase()+"</div>"
+      +"<span style=\"font-size:13px;font-weight:600;\">"+nm+"</span>"
+      +"<span style=\"font-size:11px;color:#bbb;margin-left:auto;\">"+urecs.length+" registros</span>"
+      +"</div>"
+      +rows
+      +"</div>";
+  }
+  if(!html)html="<div style=\"text-align:center;padding:40px 16px;color:#ccc;font-size:13px;\">La familia no tiene registros a\xfan.</div>";
+  el.innerHTML=html+"<div style=\"height:10px;\"></div>";
+}
 
 function tGrf(el){
   var d=leer(),gr=[],br=[];
   for(var i=0;i<d.r.length;i++){if(d.r[i].u===CU&&d.r[i].t==="g")gr.push(d.r[i]);if(d.r[i].u===CU&&d.r[i].t==="b")br.push(d.r[i]);}
   gr=gr.slice(-15);br=br.slice(-10);
-  el.innerHTML="<div style=\"background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;\"><div style=\"padding:12px 14px 10px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;\">Glucosa</div><div style=\"padding:10px;\">"+(gr.length<2?"<div style=\"text-align:center;padding:24px;color:#ccc;\">A\xf1ade al menos 2 registros.</div>":"<canvas id=\"gc\" style=\"width:100%;height:180px;\"></canvas>")+"</div></div>"
-    +"<div style=\"background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;\"><div style=\"padding:12px 14px 10px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;\">Tensi\xf3n</div><div style=\"padding:10px;\">"+(br.length<2?"<div style=\"text-align:center;padding:24px;color:#ccc;\">A\xf1ade al menos 2 registros.</div>":"<canvas id=\"bc\" style=\"width:100%;height:180px;\"></canvas>")+"</div></div>"
-    +"<div style=\"height:12px;\"></div>";
+  el.innerHTML=card("Glucosa",gr.length<2?"<div style=\"text-align:center;padding:20px;color:#ccc;\">A\xf1ade al menos 2 registros.</div>":"<canvas id=\"gc\" style=\"width:100%;height:160px;\"></canvas>")
+    +card("Tensi\xf3n",br.length<2?"<div style=\"text-align:center;padding:20px;color:#ccc;\">A\xf1ade al menos 2 registros.</div>":"<canvas id=\"bc\" style=\"width:100%;height:160px;\"></canvas>")
+    +"<div style=\"height:10px;\"></div>";
   if(gr.length>=2){var gl=[],gv=[];for(var a=0;a<gr.length;a++){gl.push(fDay(gr[a].ts));gv.push(gr[a].v);}setTimeout(function(){drwC("gc",gl,[{d:gv,c:"#185FA5"}],[70,130]);},80);}
   if(br.length>=2){var bl=[],bs=[],bd=[];for(var b=0;b<br.length;b++){bl.push(fDay(br[b].ts));bs.push(br[b].s);bd.push(br[b].di);}setTimeout(function(){drwC("bc",bl,[{d:bs,c:"#3C3489"},{d:bd,c:"#854F0B"}],[60,140]);},80);}
 }
 function drwC(cid,labels,sets,ref){
   var cv=document.getElementById(cid);if(!cv)return;
-  var cx=cv.getContext("2d"),W=cv.parentElement.clientWidth,H=180;
+  var cx=cv.getContext("2d"),W=cv.parentElement.clientWidth,H=160;
   cv.width=W;cv.height=H;
-  var P={t:14,r:14,b:28,l:36},CW=W-P.l-P.r,CH=H-P.t-P.b;
+  var P={t:12,r:12,b:24,l:32},CW=W-P.l-P.r,CH=H-P.t-P.b;
   var av=[];for(var i=0;i<sets.length;i++)for(var j=0;j<sets[i].d.length;j++)av.push(sets[i].d[j]);
   var mn=Math.min.apply(null,av.concat([ref[0]]))-10,mx=Math.max.apply(null,av.concat([ref[1]]))+10,n=labels.length;
-  function sx(i){return P.l+i*(CW/(n-1));}
-  function sy(v){return P.t+CH-(v-mn)/(mx-mn)*CH;}
+  function sx(i){return P.l+i*(CW/(n-1));}function sy(v){return P.t+CH-(v-mn)/(mx-mn)*CH;}
   cx.clearRect(0,0,W,H);
-  for(var s=0;s<=4;s++){var t=s/4,y=P.t+CH*t;cx.strokeStyle="rgba(0,0,0,.06)";cx.lineWidth=.5;cx.beginPath();cx.moveTo(P.l,y);cx.lineTo(P.l+CW,y);cx.stroke();cx.fillStyle="#bbb";cx.font="9px sans-serif";cx.textAlign="right";cx.fillText(Math.round(mx-t*(mx-mn)),P.l-3,y+3);}
+  for(var s=0;s<=4;s++){var t=s/4,y=P.t+CH*t;cx.strokeStyle="rgba(0,0,0,.06)";cx.lineWidth=.5;cx.beginPath();cx.moveTo(P.l,y);cx.lineTo(P.l+CW,y);cx.stroke();cx.fillStyle="#ccc";cx.font="9px sans-serif";cx.textAlign="right";cx.fillText(Math.round(mx-t*(mx-mn)),P.l-2,y+3);}
   cx.fillStyle="rgba(59,109,17,.08)";cx.fillRect(P.l,sy(ref[1]),CW,sy(ref[0])-sy(ref[1]));
-  for(var di=0;di<sets.length;di++){var ds=sets[di];cx.strokeStyle=ds.c;cx.lineWidth=2;cx.lineJoin="round";cx.beginPath();for(var pi=0;pi<ds.d.length;pi++){pi?cx.lineTo(sx(pi),sy(ds.d[pi])):cx.moveTo(sx(pi),sy(ds.d[pi]));}cx.stroke();for(var dot=0;dot<ds.d.length;dot++){cx.fillStyle=ds.c;cx.beginPath();cx.arc(sx(dot),sy(ds.d[dot]),3.5,0,Math.PI*2);cx.fill();cx.fillStyle="white";cx.beginPath();cx.arc(sx(dot),sy(ds.d[dot]),1.5,0,Math.PI*2);cx.fill();}}
-  cx.fillStyle="#bbb";cx.font="9px sans-serif";cx.textAlign="center";for(var li=0;li<labels.length;li++)cx.fillText(labels[li],sx(li),H-6);
+  for(var di=0;di<sets.length;di++){var ds=sets[di];cx.strokeStyle=ds.c;cx.lineWidth=2;cx.lineJoin="round";cx.beginPath();for(var pi=0;pi<ds.d.length;pi++){pi?cx.lineTo(sx(pi),sy(ds.d[pi])):cx.moveTo(sx(pi),sy(ds.d[pi]));}cx.stroke();for(var dot=0;dot<ds.d.length;dot++){cx.fillStyle=ds.c;cx.beginPath();cx.arc(sx(dot),sy(ds.d[dot]),3,0,Math.PI*2);cx.fill();cx.fillStyle="white";cx.beginPath();cx.arc(sx(dot),sy(ds.d[dot]),1.2,0,Math.PI*2);cx.fill();}}
+  cx.fillStyle="#ccc";cx.font="9px sans-serif";cx.textAlign="center";for(var li=0;li<labels.length;li++)cx.fillText(labels[li],sx(li),H-4);
 }
 
 function tExp(el){
   var d=leer(),tot=d.r.length,mio=0;
   for(var i=0;i<d.r.length;i++)if(d.r[i].u===CU)mio++;
-  var nm=d.n[CU]||CU;
-  el.innerHTML="<div style=\"background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;\"><div style=\"padding:12px 14px 10px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;\">Exportar CSV</div>"
-    +"<div style=\"display:flex;align-items:center;justify-content:space-between;padding:14px;border-bottom:1px solid #f0f0f0;gap:10px;\"><div><div style=\"font-size:14px;font-weight:500;\">Mis registros</div><div style=\"font-size:12px;color:#aaa;margin-top:2px;\">"+mio+" registros de "+nm+"</div></div><button id=\"bEM\" style=\"padding:9px 16px;border:1.5px solid #e0e0e0;border-radius:9px;background:white;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;\">Descargar</button></div>"
-    +"<div style=\"display:flex;align-items:center;justify-content:space-between;padding:14px;gap:10px;\"><div><div style=\"font-size:14px;font-weight:500;\">Todos los usuarios</div><div style=\"font-size:12px;color:#aaa;margin-top:2px;\">"+tot+" registros totales</div></div><button id=\"bET\" style=\"padding:9px 16px;border:1.5px solid #e0e0e0;border-radius:9px;background:white;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;\">Descargar</button></div></div>"
-    +"<div style=\"background:white;border-radius:12px;margin:12px 12px 0;border:1px solid #eee;\"><div style=\"padding:12px 14px 10px;border-bottom:1px solid #eee;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;\">Borrar datos</div>"
-    +"<div style=\"display:flex;align-items:center;justify-content:space-between;padding:14px;gap:10px;\"><div><div style=\"font-size:14px;font-weight:500;\">Borrar mis registros</div><div style=\"font-size:12px;color:#A32D2D;margin-top:2px;\">No se puede deshacer</div></div><button id=\"bBr\" style=\"padding:9px 16px;border:1.5px solid #A32D2D;border-radius:9px;background:white;font-size:13px;font-weight:500;color:#A32D2D;cursor:pointer;white-space:nowrap;\">Borrar</button></div></div>"
-    +"<div style=\"height:12px;\"></div>";
+  var nm=uNm(CU);
+  el.innerHTML=card("Exportar CSV",
+    "<div style=\"display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;\"><div><div style=\"font-size:13px;font-weight:500;\">Mis registros</div><div style=\"font-size:11px;color:#bbb;\">"+mio+" de "+nm+"</div></div><button id=\"bEM\" style=\"padding:7px 14px;border:1.5px solid #e0e0e0;border-radius:8px;background:white;font-size:12px;font-weight:500;cursor:pointer;\">Descargar</button></div>"
+    +"<div style=\"display:flex;align-items:center;justify-content:space-between;gap:8px;\"><div><div style=\"font-size:13px;font-weight:500;\">Toda la familia</div><div style=\"font-size:11px;color:#bbb;\">"+tot+" registros</div></div><button id=\"bET\" style=\"padding:7px 14px;border:1.5px solid #e0e0e0;border-radius:8px;background:white;font-size:12px;font-weight:500;cursor:pointer;\">Descargar</button></div>")
+    +card("Borrar mis datos",
+    "<div style=\"display:flex;align-items:center;justify-content:space-between;gap:8px;\"><div><div style=\"font-size:13px;font-weight:500;\">Borrar mis registros</div><div style=\"font-size:11px;color:#A32D2D;\">No se puede deshacer</div></div><button id=\"bBr\" style=\"padding:7px 14px;border:1.5px solid #A32D2D;border-radius:8px;background:white;font-size:12px;font-weight:500;color:#A32D2D;cursor:pointer;\">Borrar</button></div>")
+    +"<div style=\"height:10px;\"></div>";
   document.getElementById("bEM").addEventListener("click",function(){expC("mio");});
   document.getElementById("bET").addEventListener("click",function(){expC("tod");});
   document.getElementById("bBr").addEventListener("click",function(){
     if(!confirm("\xbfBorrar todos tus registros?"))return;
-    var d=leer(),k=[];for(var i=0;i<d.r.length;i++)if(d.r[i].u!==CU)k.push(d.r[i]);d.r=k;guardar(d);toast("Registros borrados");irTab("exp");
+    var d=leer(),k=[];for(var i=0;i<d.r.length;i++)if(d.r[i].u!==CU)k.push(d.r[i]);d.r=k;guardar(d);toast("Borrado");irTab("exp");
   });
 }
 
@@ -244,11 +310,11 @@ function expC(scope){
   var d=leer(),recs=[];
   for(var i=0;i<d.r.length;i++){if(scope==="mio"&&d.r[i].u!==CU)continue;recs.push(d.r[i]);}
   if(!recs.length){toast("No hay registros");return;}
-  var rows=[["Usuario","Tipo","Fecha","Hora","Glucosa(mg/dL)","Sistolica","Diastolica","Momento","Nota"]];
+  var rows=[["Usuario","Tipo","Fecha","Hora","Glucosa(mg/dL)","Sistolica","Diastolica","Ritmo(ppm)","Momento","Nota"]];
   for(var j=0;j<recs.length;j++){
     var r=recs[j],dt=new Date(r.ts),f=dt.toLocaleDateString("es-ES"),h=dt.toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"}),nm=d.n[r.u]||r.u;
-    if(r.t==="g")rows.push([nm,"Glucosa",f,h,r.v,"","",r.m||"",r.n||""]);
-    else rows.push([nm,"Tension",f,h,"",r.s,r.di,"",r.n||""]);
+    if(r.t==="g")rows.push([nm,"Glucosa",f,h,r.v,"","","",r.m||"",r.n||""]);
+    else rows.push([nm,"Tension",f,h,"",r.s,r.di,r.hr||"","",r.n||""]);
   }
   var csv="";
   for(var ri=0;ri<rows.length;ri++){
@@ -264,12 +330,14 @@ function expC(scope){
 
 document.getElementById("bU1").addEventListener("click",function(){entrar("u1");});
 document.getElementById("bU2").addEventListener("click",function(){entrar("u2");});
+document.getElementById("bU3").addEventListener("click",function(){entrar("u3");});
 document.getElementById("bCf").addEventListener("click",abrirCf);
 document.getElementById("bCU").addEventListener("click",volverU);
 document.getElementById("bSvCf").addEventListener("click",guardarCf);
 document.getElementById("bClCf").addEventListener("click",cerrarCf);
 document.getElementById("nIni").addEventListener("click",function(){irTab("ini");});
 document.getElementById("nHis").addEventListener("click",function(){irTab("his");});
+document.getElementById("nFam").addEventListener("click",function(){irTab("fam");});
 document.getElementById("nGrf").addEventListener("click",function(){irTab("grf");});
 document.getElementById("nExp").addEventListener("click",function(){irTab("exp");});
 initU();
